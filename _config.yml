@@ -1,0 +1,23 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Yours Swiftly
+tagline:          'by Łukasz Kuczborski'
+description:      'Blogged by <a href="https://twitter.com/lkuczborski" target="_blank">@lkuczborski</a>.'
+url:              http://kuczborski.com
+baseurl:          /
+
+author:
+  name:           'Łukasz Kuczborski'
+  url:            https://twitter.com/lkuczborski
+
+paginate:         5
+
+# Custom vars
+github:           https://github.com/lkuczborski
+twitter:          https://twitter.com/lkuczborski
