@@ -27,6 +27,12 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/obsidian.min.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
 </head>
 
 
@@ -82,17 +88,13 @@
   <p>Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries.</p>
 
 <p>Here is how you can now create an Array with different value types:</p>
-
-<blockquote>
-<p>var arr: [Any] = [&quot;aString&quot;, 1.23, true]</p>
-</blockquote>
-
+<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">/* Create an Array with different value types */
+var arr: [Any] = [&quot;aString&quot;, 1.23, true]
+</code></pre></div>
 <p>And here is the same for Dictionary:</p>
-
-<blockquote>
-<p>var dict: [String:Any] = [&quot;key1&quot;:aString&quot;, &quot;key2&quot;:1.23, &quot;key3&quot;:true]</p>
-</blockquote>
-
+<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">/* Create a Dictionary with different value types */
+var dict: [String:Any] = [&quot;key1&quot;:&quot;aString&quot;, &quot;key2&quot;:1.23, &quot;key3&quot;:true]
+</code></pre></div>
 </div>
 
 

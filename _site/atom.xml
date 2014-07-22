@@ -4,7 +4,7 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-07-21T23:48:26+02:00</updated>
+ <updated>2014-07-22T15:04:48+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
@@ -20,17 +20,13 @@
    <content type="html">&lt;p&gt;Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries.&lt;/p&gt;
 
 &lt;p&gt;Here is how you can now create an Array with different value types:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;var arr: [Any] = [&amp;quot;aString&amp;quot;, 1.23, true]&lt;/p&gt;
-&lt;/blockquote&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;/* Create an Array with different value types */
+var arr: [Any] = [&amp;quot;aString&amp;quot;, 1.23, true]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And here is the same for Dictionary:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;var dict: [String:Any] = [&amp;quot;key1&amp;quot;:aString&amp;quot;, &amp;quot;key2&amp;quot;:1.23, &amp;quot;key3&amp;quot;:true]&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;/* Create a Dictionary with different value types */
+var dict: [String:Any] = [&amp;quot;key1&amp;quot;:&amp;quot;aString&amp;quot;, &amp;quot;key2&amp;quot;:1.23, &amp;quot;key3&amp;quot;:true]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
  </entry>
  
 
