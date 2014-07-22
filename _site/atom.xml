@@ -4,7 +4,7 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-07-22T17:39:51+02:00</updated>
+ <updated>2014-07-22T17:45:57+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>Arrays And Dicts</title>
+   <title>Arrays and Dictionaries with various value types in Swift</title>
    <link href="http://kuczborski.com/2014/07/21/arrays-and-dicts/"/>
    <updated>2014-07-21T00:00:00+02:00</updated>
    <id>http://kuczborski.com/2014/07/21/arrays-and-dicts</id>
