@@ -7,15 +7,16 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@lkuczborski">
   <meta name="twitter:site" content="@lkuczborski">
-  {% if page.title %}
-    <meta name="twitter:title" content="{{ page.title }}">
-  {% else %}
+
+  {% if page.title == "Home" %}
     <meta name="twitter:title" content="{{ site.title }}">
+  {% else %}
+    <meta name="twitter:title" content="{{ page.title }}">
   {% endif %}
   {% if page.description %}
     <meta name="twitter:description" content="{{ page.description }}">
   {% else %}
-    <meta name="twitter:description" content="Blogged by Yours Swiftly, @lkuczborski">
+    <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
   {% endif %}
 
 
