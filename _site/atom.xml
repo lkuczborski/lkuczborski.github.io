@@ -4,13 +4,146 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-07-22T21:47:40+02:00</updated>
+ <updated>2014-07-22T23:37:03+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Changes in Xcode 6 Beta 4</title>
+   <link href="http://kuczborski.com/2014/07/22/changes-in-xcode-6-beta-4/"/>
+   <updated>2014-07-22T00:00:00+02:00</updated>
+   <id>http://kuczborski.com/2014/07/22/changes-in-xcode-6-beta-4</id>
+   <content type="html">&lt;p&gt;Xcode 6 Beta 4 brought some important changes related to constantly evolving Swift Language. Below is a compilation of the most important ones.&lt;/p&gt;
+
+&lt;h2&gt;Summary of changes&lt;/h2&gt;
+
+&lt;h3&gt;Access Control&lt;/h3&gt;
+
+&lt;h4&gt;Access levels&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;private&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Can only be accessed from within the source file where they are defined.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;internal&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Can be accessed anywhere within the target where they are defined.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;public&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Can be accessed from anywhere within the target and from any other context that imports the current target’s module.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Things to remember&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Frameworks need the public API marked as public&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Implicitly-synthesized initializers for classes and structs are internal by default&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Generated header&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;contains only &lt;strong&gt;public&lt;/strong&gt; declarations for &lt;strong&gt;Frameworks&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;contains both &lt;strong&gt;public and internal&lt;/strong&gt; declarations for &lt;strong&gt;Applications&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;// An example class in a framework target.
+public class ListItem: NSObject {
+  public var text: String
+  public var isComplete: Bool
+  // Readable throughout the module, but only writeable from
+  // within this file.
+  private(set) var UUID: NSUUID
+  public init(text: String, completed: Bool, UUID: NSUUID) {
+      self.text = text
+      self.isComplete = completed
+      self.UUID = UUID
+  }
+  func refreshIdentity() {
+      self.UUID = NSUUID()
+  }
+      // Must be public because it overrides a public method
+      // and is itself part of a public type.
+      public override func isEqual(object: AnyObject?) -&amp;gt; Bool {
+          if let item = object as? ListItem {
+              return self.UUID == item.UUID
+      }
+      return false
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; If you need a private method or property to be callable from Objective-C, you have to add
+the &lt;code&gt;@objc&lt;/code&gt; attribute to the declaration explicitly.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Limitations&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Unit tests cannot interact with the classes and methods in an application unless they are marked public (unit test target is not part of the application module)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3&gt;.by() -&amp;gt; stride()&lt;/h3&gt;
+
+&lt;p&gt;The .by() method for ranges has been replaced with general stride() functions.&lt;/p&gt;
+
+&lt;h4&gt;Usage&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;for &lt;strong&gt;exlusive&lt;/strong&gt; ranges:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;stride(from: to: by:)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;for &lt;strong&gt;inclusive&lt;/strong&gt; ranges:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;stride(from: through: by:)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Examples&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;stride(from: x, to: y, by: z)        //was: (x..&amp;lt;y).by(z)
+stride(from: x, through: y, by: z)   //was: (x...y).by(z)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+
+&lt;h2&gt;Unicode String improvements&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;String&lt;/code&gt; type now implements a grapheme cluster segmentation algorithm to
+produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;// returns 15
+countElements(&amp;quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A &lt;code&gt;for-in&lt;/code&gt; loop over the string produces each human visible character in sequence.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Revised Declaration Modifiers&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;@final&lt;/code&gt;, &lt;code&gt;@lazy&lt;/code&gt;, &lt;code&gt;@optional&lt;/code&gt;, and &lt;code&gt;@required&lt;/code&gt; attributes have been converted to declaration modifiers, specified without an &lt;code&gt;@&lt;/code&gt; sign.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;@final&lt;/code&gt; -&amp;gt; &lt;code&gt;final&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;@lazy&lt;/code&gt; -&amp;gt; &lt;code&gt;lazy&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;@optional&lt;/code&gt; -&amp;gt; &lt;code&gt;optional&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;@required&lt;/code&gt; -&amp;gt; &lt;code&gt;required&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Landmarks&lt;/h2&gt;
+
+&lt;p&gt;Finally! Xcode now supports &lt;code&gt;//MARK:&lt;/code&gt;, &lt;code&gt;//TODO:&lt;/code&gt; and &lt;code&gt;//FIXME&lt;/code&gt; landmarks to annotate your code and
+lists them in the jump bar.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Let me know if you think I missed something important and feel free to comment below!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Arrays and Dictionaries with various value types in Swift</title>
