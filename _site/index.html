@@ -97,7 +97,7 @@
     <div class="content container">
       <div class="posts">
   
-  <div class="post">
+  <div class="">
     <h1 class="post-title">
       <a href="/2014/07/22/changes-in-xcode-6-beta-4/">
         Changes in Xcode 6 Beta 4
@@ -108,133 +108,12 @@
 
     <p>Xcode 6 Beta 4 brought some important changes related to constantly evolving Swift Language. Below is a compilation of the most important ones.</p>
 
-<h2>Summary of changes</h2>
-
-<h3>Access Control</h3>
-
-<h4>Access levels</h4>
-
-<ul>
-<li><p><code>private</code></p>
-
-<p>Can only be accessed from within the source file where they are defined.</p></li>
-<li><p><code>internal</code></p>
-
-<p>Can be accessed anywhere within the target where they are defined.</p></li>
-<li><p><code>public</code></p>
-
-<p>Can be accessed from anywhere within the target and from any other context that imports the current target’s module.</p></li>
-</ul>
-
-<h4>Things to remember</h4>
-
-<ul>
-<li><p>Frameworks need the public API marked as public</p></li>
-<li><p>Implicitly-synthesized initializers for classes and structs are internal by default</p></li>
-<li><p>Generated header</p>
-
-<ul>
-<li>contains only <strong>public</strong> declarations for <strong>Frameworks</strong></li>
-<li><p>contains both <strong>public and internal</strong> declarations for <strong>Applications</strong></p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">// An example class in a framework target.
-public class ListItem: NSObject {
-  public var text: String
-  public var isComplete: Bool
-  // Readable throughout the module, but only writeable from
-  // within this file.
-  private(set) var UUID: NSUUID
-  public init(text: String, completed: Bool, UUID: NSUUID) {
-      self.text = text
-      self.isComplete = completed
-      self.UUID = UUID
-  }
-  func refreshIdentity() {
-      self.UUID = NSUUID()
-  }
-      // Must be public because it overrides a public method
-      // and is itself part of a public type.
-      public override func isEqual(object: AnyObject?) -&gt; Bool {
-          if let item = object as? ListItem {
-              return self.UUID == item.UUID
-      }
-      return false
-  }
-}
-</code></pre></div></li>
-</ul></li>
-<li><p>Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.</p>
-
-<ul>
-<li> If you need a private method or property to be callable from Objective-C, you have to add
-the <code>@objc</code> attribute to the declaration explicitly.</li>
-</ul></li>
-</ul>
-
-<h4>Limitations</h4>
-
-<ul>
-<li>Unit tests cannot interact with the classes and methods in an application unless they are marked public (unit test target is not part of the application module)</li>
-</ul>
-
-<hr>
-
-<h3>.by() -&gt; stride()</h3>
-
-<p>The .by() method for ranges has been replaced with general stride() functions.</p>
-
-<h4>Usage</h4>
-
-<ul>
-<li><p>for <strong>exlusive</strong> ranges:</p>
-
-<p><code>stride(from: to: by:)</code></p></li>
-<li><p>for <strong>inclusive</strong> ranges:</p>
-
-<p><code>stride(from: through: by:)</code></p></li>
-</ul>
-
-<h4>Examples</h4>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">stride(from: x, to: y, by: z)        //was: (x..&lt;y).by(z)
-stride(from: x, through: y, by: z)   //was: (x...y).by(z)
-</code></pre></div>
-<hr>
-
-<h2>Unicode String improvements</h2>
-
-<p>The <code>String</code> type now implements a grapheme cluster segmentation algorithm to
-produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.</p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">// returns 15
-countElements(&quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”)
-</code></pre></div>
-<p>A <code>for-in</code> loop over the string produces each human visible character in sequence.</p>
-
-<hr>
-
-<h2>Revised Declaration Modifiers</h2>
-
-<p>The <code>@final</code>, <code>@lazy</code>, <code>@optional</code>, and <code>@required</code> attributes have been converted to declaration modifiers, specified without an <code>@</code> sign.</p>
-
-<ul>
-<li><p><code>@final</code> -&gt; <code>final</code></p></li>
-<li><p><code>@lazy</code> -&gt; <code>lazy</code></p></li>
-<li><p><code>@optional</code> -&gt; <code>optional</code></p></li>
-<li><p><code>@required</code> -&gt; <code>required</code></p></li>
-</ul>
-
-<hr>
-
-<h2>Landmarks</h2>
-
-<p>Finally! Xcode now supports <code>//MARK:</code>, <code>//TODO:</code> and <code>//FIXME</code> landmarks to annotate your code and
-lists them in the jump bar.</p>
-
-<hr>
-
-<p>Let me know if you think I missed something important and feel free to comment below!</p>
-
+    
+      <hr />
+    
   </div>
   
-  <div class="post">
+  <div class="">
     <h1 class="post-title">
       <a href="/2014/07/21/arrays-and-dicts/">
         Arrays and Dictionaries with various value types in Swift
@@ -253,6 +132,7 @@ var arr: [Any] = [&quot;aString&quot;, 1.23, true]
 <div class="highlight"><pre><code class="swift language-swift" data-lang="swift">/* Create a Dictionary with different value types */
 var dict: [String:Any] = [&quot;key1&quot;:&quot;aString&quot;, &quot;key2&quot;:1.23, &quot;key3&quot;:true]
 </code></pre></div>
+    
   </div>
   
 </div>

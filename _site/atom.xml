@@ -4,7 +4,7 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-07-22T23:57:28+02:00</updated>
+ <updated>2014-07-23T23:27:39+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
@@ -18,6 +18,8 @@
    <updated>2014-07-22T00:00:00+02:00</updated>
    <id>http://kuczborski.com/2014/07/22/changes-in-xcode-6-beta-4</id>
    <content type="html">&lt;p&gt;Xcode 6 Beta 4 brought some important changes related to constantly evolving Swift Language. Below is a compilation of the most important ones.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2&gt;Summary of changes&lt;/h2&gt;
 
@@ -105,8 +107,8 @@ the &lt;code&gt;@objc&lt;/code&gt; attribute to the declaration explicitly.&lt;/
 &lt;/ul&gt;
 
 &lt;h4&gt;Examples&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;stride(from: x, to: y, by: z)        //was: (x..&amp;lt;y).by(z)
-stride(from: x, through: y, by: z)   //was: (x...y).by(z)
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;stride(from: x, to: y, by: z)           //was: (x..&amp;lt;y).by(z)
+stride(from: x, through: y, by: z)      //was: (x...y).by(z)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;hr&gt;
 

@@ -7,6 +7,8 @@ comments: true
 
 Xcode 6 Beta 4 brought some important changes related to constantly evolving Swift Language. Below is a compilation of the most important ones.
 
+<!--more-->
+
 ## Summary of changes
 
 ### Access Control
@@ -88,8 +90,8 @@ The .by() method for ranges has been replaced with general stride() functions.
 
 #### Examples
 ```swift
-stride(from: x, to: y, by: z)        //was: (x..<y).by(z)
-stride(from: x, through: y, by: z)   //was: (x...y).by(z)
+stride(from: x, to: y, by: z)           //was: (x..<y).by(z)
+stride(from: x, through: y, by: z)      //was: (x...y).by(z)
 ```
 
 ---
