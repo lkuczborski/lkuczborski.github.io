@@ -102,11 +102,25 @@
 
 <!--more-->
 
-<h2>Summary of changes</h2>
+<h2>TOC</h2>
 
-<h3>Access Control</h3>
+<h3><a href="#access">Access Control</a></h3>
+
+<h3><a href="#by">.by() -&gt; stride()</a></h3>
+
+<h3><a href="#unicode">Unicode String improvements</a></h3>
+
+<h3><a href="#modifiers">Revised Declaration Modifiers</a></h3>
+
+<h3><a href="#landmarks">Landmarks</a></h3>
+
+<hr>
+
+<h3><a id="access"></a>Access Control</h3>
 
 <h4>Access levels</h4>
+
+<p>Entities can be:</p>
 
 <ul>
 <li><p><code>private</code></p>
@@ -172,7 +186,7 @@ the <code>@objc</code> attribute to the declaration explicitly.</li>
 
 <hr>
 
-<h3>.by() -&gt; stride()</h3>
+<h3><a id="by"></a>.by() -&gt; stride()</h3>
 
 <p>The .by() method for ranges has been replaced with general stride() functions.</p>
 
@@ -193,7 +207,7 @@ stride(from: x, through: y, by: z)      //was: (x...y).by(z)
 </code></pre></div>
 <hr>
 
-<h2>Unicode String improvements</h2>
+<h2><a id="unicode"></a>Unicode String improvements</h2>
 
 <p>The <code>String</code> type now implements a grapheme cluster segmentation algorithm to
 produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.</p>
@@ -204,7 +218,7 @@ countElements(&quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”
 
 <hr>
 
-<h2>Revised Declaration Modifiers</h2>
+<h2><a id="modifiers"></a>Revised Declaration Modifiers</h2>
 
 <p>The <code>@final</code>, <code>@lazy</code>, <code>@optional</code>, and <code>@required</code> attributes have been converted to declaration modifiers, specified without an <code>@</code> sign.</p>
 
@@ -217,7 +231,7 @@ countElements(&quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”
 
 <hr>
 
-<h2>Landmarks</h2>
+<h2><a id="landmarks"></a>Landmarks</h2>
 
 <p>Finally! Xcode now supports <code>//MARK:</code>, <code>//TODO:</code> and <code>//FIXME</code> landmarks to annotate your code and
 lists them in the jump bar.</p>

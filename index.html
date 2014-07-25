@@ -16,6 +16,10 @@ description: © Łukasz Kuczborski
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
     {{ post.excerpt }}
+    {% if post.content contains site.excerpt_separator %}
+      <a href="{{ post.url }}">Read more...</a>
+    {% endif %}
+
     {% if post.previous %}
       <hr />
     {% endif %}

@@ -9,11 +9,20 @@ Xcode 6 Beta 4 brought some important changes related to constantly evolving Swi
 
 <!--more-->
 
-## Summary of changes
+## TOC
+### [Access Control](#access)
+### [.by() -> stride()](#by)
+### [Unicode String improvements](#unicode)
+### [Revised Declaration Modifiers](#modifiers)
+### [Landmarks](#landmarks)
 
-### Access Control
+---
+
+
+### <a id="access"></a>Access Control
 
 #### Access levels
+Entities can be:
 
 - ``` private ```
 
@@ -75,7 +84,7 @@ the ``` @objc ``` attribute to the declaration explicitly.
 
 ---
 
-### .by() -> stride()
+### <a id="by"></a>.by() -> stride()
 
 The .by() method for ranges has been replaced with general stride() functions.
 
@@ -96,7 +105,7 @@ stride(from: x, through: y, by: z)      //was: (x...y).by(z)
 
 ---
 
-## Unicode String improvements
+## <a id="unicode"></a>Unicode String improvements
 The ``` String ``` type now implements a grapheme cluster segmentation algorithm to
 produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.
 
@@ -109,7 +118,7 @@ A ``` for-in ``` loop over the string produces each human visible character in s
 
 ---
 
-## Revised Declaration Modifiers
+## <a id="modifiers"></a>Revised Declaration Modifiers
 The ``` @final ```, ``` @lazy ```, ```@optional ```, and ``` @required ``` attributes have been converted to declaration modifiers, specified without an ``` @ ``` sign.
 
 - ``` @final ``` -> ``` final ```
@@ -122,7 +131,7 @@ The ``` @final ```, ``` @lazy ```, ```@optional ```, and ``` @required ``` attri
 
 ---
 
-## Landmarks
+## <a id="landmarks"></a>Landmarks
 Finally! Xcode now supports ``` //MARK: ```, ``` //TODO: ``` and ``` //FIXME ``` landmarks to annotate your code and
 lists them in the jump bar.
 

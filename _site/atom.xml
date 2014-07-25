@@ -4,7 +4,7 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-07-25T11:20:13+02:00</updated>
+ <updated>2014-07-25T11:43:31+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
@@ -48,11 +48,25 @@ Yours Swiftly,&lt;br /&gt;
 
 &lt;!--more--&gt;
 
-&lt;h2&gt;Summary of changes&lt;/h2&gt;
+&lt;h2&gt;TOC&lt;/h2&gt;
 
-&lt;h3&gt;Access Control&lt;/h3&gt;
+&lt;h3&gt;&lt;a href=&quot;#access&quot;&gt;Access Control&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3&gt;&lt;a href=&quot;#by&quot;&gt;.by() -&amp;gt; stride()&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3&gt;&lt;a href=&quot;#unicode&quot;&gt;Unicode String improvements&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3&gt;&lt;a href=&quot;#modifiers&quot;&gt;Revised Declaration Modifiers&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3&gt;&lt;a href=&quot;#landmarks&quot;&gt;Landmarks&lt;/a&gt;&lt;/h3&gt;
+
+&lt;hr&gt;
+
+&lt;h3&gt;&lt;a id=&quot;access&quot;&gt;&lt;/a&gt;Access Control&lt;/h3&gt;
 
 &lt;h4&gt;Access levels&lt;/h4&gt;
+
+&lt;p&gt;Entities can be:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;private&lt;/code&gt;&lt;/p&gt;
@@ -118,7 +132,7 @@ the &lt;code&gt;@objc&lt;/code&gt; attribute to the declaration explicitly.&lt;/
 
 &lt;hr&gt;
 
-&lt;h3&gt;.by() -&amp;gt; stride()&lt;/h3&gt;
+&lt;h3&gt;&lt;a id=&quot;by&quot;&gt;&lt;/a&gt;.by() -&amp;gt; stride()&lt;/h3&gt;
 
 &lt;p&gt;The .by() method for ranges has been replaced with general stride() functions.&lt;/p&gt;
 
@@ -139,7 +153,7 @@ stride(from: x, through: y, by: z)      //was: (x...y).by(z)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;hr&gt;
 
-&lt;h2&gt;Unicode String improvements&lt;/h2&gt;
+&lt;h2&gt;&lt;a id=&quot;unicode&quot;&gt;&lt;/a&gt;Unicode String improvements&lt;/h2&gt;
 
 &lt;p&gt;The &lt;code&gt;String&lt;/code&gt; type now implements a grapheme cluster segmentation algorithm to
 produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.&lt;/p&gt;
@@ -150,7 +164,7 @@ countElements(&amp;quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA
 
 &lt;hr&gt;
 
-&lt;h2&gt;Revised Declaration Modifiers&lt;/h2&gt;
+&lt;h2&gt;&lt;a id=&quot;modifiers&quot;&gt;&lt;/a&gt;Revised Declaration Modifiers&lt;/h2&gt;
 
 &lt;p&gt;The &lt;code&gt;@final&lt;/code&gt;, &lt;code&gt;@lazy&lt;/code&gt;, &lt;code&gt;@optional&lt;/code&gt;, and &lt;code&gt;@required&lt;/code&gt; attributes have been converted to declaration modifiers, specified without an &lt;code&gt;@&lt;/code&gt; sign.&lt;/p&gt;
 
@@ -163,7 +177,7 @@ countElements(&amp;quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA
 
 &lt;hr&gt;
 
-&lt;h2&gt;Landmarks&lt;/h2&gt;
+&lt;h2&gt;&lt;a id=&quot;landmarks&quot;&gt;&lt;/a&gt;Landmarks&lt;/h2&gt;
 
 &lt;p&gt;Finally! Xcode now supports &lt;code&gt;//MARK:&lt;/code&gt;, &lt;code&gt;//TODO:&lt;/code&gt; and &lt;code&gt;//FIXME&lt;/code&gt; landmarks to annotate your code and
 lists them in the jump bar.&lt;/p&gt;
