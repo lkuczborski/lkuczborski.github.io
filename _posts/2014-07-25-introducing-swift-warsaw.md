@@ -13,7 +13,7 @@ The idea came to my head at [#SwiftCrunch](http://swiftcrunch.com) where I met a
 ####Swift Warsaw logo
 </center>
 
-I would like to thank [Macoscope](http://macoscope.com) in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - [Maciek Konieczny](https://narf.pl), [Jan Klausa](https://github.com/jklausa), [Wojtek Czekalski](https://github.com/wczekalski) and [Maciek Sienkiewicz](https://github.com/niczyja) for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on [Meetup](http://www.meetup.com/Swift-Warsaw/events/195521922/) and [Facebook](https://www.facebook.com/events/715788445155070/)). 
+I would like to thank [Macoscope](http://macoscope.com) in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - [Maciek Konieczny](https://narf.pl), [Jan Klausa](http://klausa.pl), [Wojtek Czekalski](https://github.com/wczekalski) and [Maciek Sienkiewicz](https://github.com/niczyja) for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on [Meetup](http://www.meetup.com/Swift-Warsaw/events/195521922/) and [Facebook](https://www.facebook.com/events/715788445155070/)). 
 
 I would also like to thank [Dawid Woldu](http://macoscope.com/#dawid) from Macoscope for helping us out with really neat logo and [Krzysztof Siejkowski](https://twitter.com/_siejkowski) for supporting the idea from the start and for working on a first guest presentation for Swift Warsaw :)
 
