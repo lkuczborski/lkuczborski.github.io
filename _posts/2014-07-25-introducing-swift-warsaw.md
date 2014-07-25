@@ -17,7 +17,7 @@ I would like to thank [Macoscope](http://macoscope.com) in the first place, for 
 
 I would also like to thank [Dawid Woldu](http://macoscope.com/#dawid) from Macoscope for helping us out with really neat logo and [Krzysztof Siejkowski](https://twitter.com/_siejkowski) for supporting the idea from the start and for working on a first guest presentation for Swift Warsaw :)
 
-Hope to see you all at Swift Warsaw #1 and many more to come.
+Hope to see you all at **Swift Warsaw #1** and many more to come.
 
 
 <br />
