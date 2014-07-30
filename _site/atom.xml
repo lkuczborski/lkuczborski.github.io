@@ -4,13 +4,81 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-07-25T11:45:05+02:00</updated>
+ <updated>2014-07-30T11:24:44+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Any vs. AnyObject</title>
+   <link href="http://kuczborski.com/2014/07/29/any-vs-anyobject/"/>
+   <updated>2014-07-29T00:00:00+02:00</updated>
+   <id>http://kuczborski.com/2014/07/29/any-vs-anyobject</id>
+   <content type="html">&lt;p&gt;Swift provides two special type aliases for working with non-specific types:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AnyObject&lt;/code&gt; can represent an instance of any class type.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Any&lt;/code&gt; can represent an instance of any type at all, apart from function types.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Let&amp;#39;s assume we have &lt;code&gt;Movie&lt;/code&gt; class...&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;class Movie {
+    let title: String
+    init(_ title: String) {
+        self.title = title;
+    }
+    func simpleDescription() -&amp;gt; String {
+        return &amp;quot;Title: \&amp;quot;\(title)\&amp;quot;.&amp;quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There is one interesting thing in the above example – the &lt;code&gt;_&lt;/code&gt; sign:   &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;We can use &lt;code&gt;_&lt;/code&gt; sign when we want to omit providing parameter name in &lt;code&gt;init&lt;/code&gt; method.&lt;/strong&gt; &lt;/p&gt;
+
+&lt;p&gt;In this case we can create &lt;code&gt;Movie&lt;/code&gt; object like this...&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;Movie(&amp;quot;Forrest Gump&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;...instead of&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;Movie(title: &amp;quot;Forrest Gump&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If we would like to create an array holding &lt;code&gt;Movie&lt;/code&gt; instances and possibly other class type instances, we can do it like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;var anyObjectThings = [AnyObject]()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As we want to hold only class instances we don&amp;#39;t have to use [Any] type alias.&lt;/p&gt;
+
+&lt;h2&gt;&lt;/h2&gt;
+
+&lt;p&gt;We than append new &lt;code&gt;Movie&lt;/code&gt; object to the array like this: &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;anyObjectThings.append(Movie(&amp;quot;Forrest Gump&amp;quot;))
+
+println((anyObjectThings[0] as Movie).simpleDescription()) 
+// returns &amp;quot;Title: &amp;quot;Forrest Gump&amp;quot;.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We use [Any] when we want to support more than just class types, for eg.:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;var anyThings = [Any]()
+
+anyThings.append(42)
+anyThings.append(3.14159)
+anyThings.append(&amp;quot;hello&amp;quot;)
+anyThings.append((3.0, 5.0))
+anyThings.append(Movie(&amp;quot;Godzilla&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Also see my previous blog post on creating Arrays and Dictionaries with various value types &lt;a href=&quot;/2014/07/21/arrays-and-dicts&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Apple warns to use &lt;code&gt;Any&lt;/code&gt; and &lt;code&gt;AnyObject&lt;/code&gt; only when you explicitly need the behavior and capabilities they provide.&lt;/strong&gt; It is always better to be specific about the types you expect to work with in your code.&lt;/p&gt;
+
+&lt;p&gt;There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of &lt;code&gt;[AnyObject]&lt;/code&gt;, or &amp;quot;an array of values of any object type&amp;quot;. This is because Objective-C does not have explicitly typed arrays like Swift does.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Introducing Swift Warsaw</title>
@@ -27,7 +95,7 @@
 
 &lt;p&gt;&lt;/center&gt;&lt;/p&gt;
 
-&lt;p&gt;I would like to thank &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt; in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - &lt;a href=&quot;https://narf.pl&quot;&gt;Maciek Konieczny&lt;/a&gt;, &lt;a href=&quot;https://github.com/jklausa&quot;&gt;Jan Klausa&lt;/a&gt;, &lt;a href=&quot;https://github.com/wczekalski&quot;&gt;Wojtek Czekalski&lt;/a&gt; and &lt;a href=&quot;https://github.com/niczyja&quot;&gt;Maciek Sienkiewicz&lt;/a&gt; for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on &lt;a href=&quot;http://www.meetup.com/Swift-Warsaw/events/195521922/&quot;&gt;Meetup&lt;/a&gt; and &lt;a href=&quot;https://www.facebook.com/events/715788445155070/&quot;&gt;Facebook&lt;/a&gt;). &lt;/p&gt;
+&lt;p&gt;I would like to thank &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt; in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - &lt;a href=&quot;https://narf.pl&quot;&gt;Maciek Konieczny&lt;/a&gt;, &lt;a href=&quot;http://klausa.pl&quot;&gt;Jan Klausa&lt;/a&gt;, &lt;a href=&quot;https://github.com/wczekalski&quot;&gt;Wojtek Czekalski&lt;/a&gt; and &lt;a href=&quot;https://github.com/niczyja&quot;&gt;Maciek Sienkiewicz&lt;/a&gt; for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on &lt;a href=&quot;http://www.meetup.com/Swift-Warsaw/events/195521922/&quot;&gt;Meetup&lt;/a&gt; and &lt;a href=&quot;https://www.facebook.com/events/715788445155070/&quot;&gt;Facebook&lt;/a&gt;). &lt;/p&gt;
 
 &lt;p&gt;I would also like to thank &lt;a href=&quot;http://macoscope.com/#dawid&quot;&gt;Dawid Woldu&lt;/a&gt; from Macoscope for helping us out with really neat logo and &lt;a href=&quot;https://twitter.com/_siejkowski&quot;&gt;Krzysztof Siejkowski&lt;/a&gt; for supporting the idea from the start and for working on a first guest presentation for Swift Warsaw :)&lt;/p&gt;
 

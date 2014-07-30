@@ -12,10 +12,10 @@
   <meta name="twitter:site" content="@lkuczborski">
 
   
-    <meta name="twitter:title" content="Introducing Swift Warsaw">
+    <meta name="twitter:title" content="Any vs. AnyObject">
   
   
-    <meta name="twitter:description" content="Swift Warsaw - Warsaw, Poland based Swift Community">
+    <meta name="twitter:description" content="Two special type aliases for working with non-specific types in Swift">
   
 
 
@@ -24,7 +24,7 @@
 
   <title>
     
-      Introducing Swift Warsaw &middot; Yours Swiftly
+      Any vs. AnyObject &middot; Yours Swiftly
     
   </title>
 
@@ -96,27 +96,68 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Introducing Swift Warsaw</h1>
-  <span class="post-date">25 Jul 2014</span>
-  <p><a href="http://narf.pl">Maciek</a> has already <a href="http://macoscope.com/blog/the-swift-community-in-poland-a-developers-diary/#more">written</a> a great blog post about what <a href="http://swiftwarsaw.com">Swift Warsaw</a> is, and how it came to be. I just wanted to add my two cents.</p>
+  <h1 class="post-title">Any vs. AnyObject</h1>
+  <span class="post-date">29 Jul 2014</span>
+  <p>Swift provides two special type aliases for working with non-specific types:</p>
 
-<p>The idea came to my head at <a href="http://swiftcrunch.com">#SwiftCrunch</a> where I met a lot of great devs and wanted the spirit of hackathon to live after the event. I wanted to create a great community. The one that would like to meet regularly and talk all things Swift and more. The one that would benefit from such meetups and level up their and our knowledge about Apple&#39;s &quot;one more thing&quot; for developers this year. I hope that we will accomplish exactly that.</p>
+<ul>
+<li><code>AnyObject</code> can represent an instance of any class type.</li>
+<li><code>Any</code> can represent an instance of any type at all, apart from function types.</li>
+</ul>
 
-<p><center><img src="https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png" alt="Swift Warsaw logo"></p>
+<!--more-->
 
-<h4>Swift Warsaw logo</h4>
+<p>Let&#39;s assume we have <code>Movie</code> class...</p>
+<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">class Movie {
+    let title: String
+    init(_ title: String) {
+        self.title = title;
+    }
+    func simpleDescription() -&gt; String {
+        return &quot;Title: \&quot;\(title)\&quot;.&quot;
+    }
+}
+</code></pre></div>
+<p>There is one interesting thing in the above example – the <code>_</code> sign:   </p>
 
-<p></center></p>
+<ul>
+<li><p><strong>We can use <code>_</code> sign when we want to omit providing parameter name in <code>init</code> method.</strong> </p>
 
-<p>I would like to thank <a href="http://macoscope.com">Macoscope</a> in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - <a href="https://narf.pl">Maciek Konieczny</a>, <a href="http://klausa.pl">Jan Klausa</a>, <a href="https://github.com/wczekalski">Wojtek Czekalski</a> and <a href="https://github.com/niczyja">Maciek Sienkiewicz</a> for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on <a href="http://www.meetup.com/Swift-Warsaw/events/195521922/">Meetup</a> and <a href="https://www.facebook.com/events/715788445155070/">Facebook</a>). </p>
+<p>In this case we can create <code>Movie</code> object like this...</p>
+<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">Movie(&quot;Forrest Gump&quot;)
+</code></pre></div>
+<p>...instead of</p>
+<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">Movie(title: &quot;Forrest Gump&quot;)
+</code></pre></div></li>
+</ul>
 
-<p>I would also like to thank <a href="http://macoscope.com/#dawid">Dawid Woldu</a> from Macoscope for helping us out with really neat logo and <a href="https://twitter.com/_siejkowski">Krzysztof Siejkowski</a> for supporting the idea from the start and for working on a first guest presentation for Swift Warsaw :)</p>
+<p>If we would like to create an array holding <code>Movie</code> instances and possibly other class type instances, we can do it like this:</p>
+<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">var anyObjectThings = [AnyObject]()
+</code></pre></div>
+<p>As we want to hold only class instances we don&#39;t have to use [Any] type alias.</p>
 
-<p>Hope to see you all at <strong>Swift Warsaw #1</strong> and many more to come.</p>
+<h2></h2>
 
-<p><br />
-Yours Swiftly,<br />
-Łukasz</p>
+<p>We than append new <code>Movie</code> object to the array like this: </p>
+<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">anyObjectThings.append(Movie(&quot;Forrest Gump&quot;))
+
+println((anyObjectThings[0] as Movie).simpleDescription()) 
+// returns &quot;Title: &quot;Forrest Gump&quot;.&quot;
+</code></pre></div>
+<p>We use [Any] when we want to support more than just class types, for eg.:</p>
+<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">var anyThings = [Any]()
+
+anyThings.append(42)
+anyThings.append(3.14159)
+anyThings.append(&quot;hello&quot;)
+anyThings.append((3.0, 5.0))
+anyThings.append(Movie(&quot;Godzilla&quot;))
+</code></pre></div>
+<p>Also see my previous blog post on creating Arrays and Dictionaries with various value types <a href="/2014/07/21/arrays-and-dicts">here</a>.</p>
+
+<p><strong>Apple warns to use <code>Any</code> and <code>AnyObject</code> only when you explicitly need the behavior and capabilities they provide.</strong> It is always better to be specific about the types you expect to work with in your code.</p>
+
+<p>There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of <code>[AnyObject]</code>, or &quot;an array of values of any object type&quot;. This is because Objective-C does not have explicitly typed arrays like Swift does.</p>
 
 </div>
 
@@ -144,9 +185,9 @@ Yours Swiftly,<br />
     
       <li>
         <h3>
-          <a href="/2014/07/29/any-vs-anyobject/">
-            Any vs. AnyObject
-            <small>29 Jul 2014</small>
+          <a href="/2014/07/25/introducing-swift-warsaw/">
+            Introducing Swift Warsaw
+            <small>25 Jul 2014</small>
           </a>
         </h3>
       </li>
