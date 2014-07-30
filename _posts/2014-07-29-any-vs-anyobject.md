@@ -42,7 +42,7 @@ There is one interesting thing in the above example – the ```_``` sign:
 	Movie(title: "Forrest Gump")
 	```
 
-If we would like to create an array holding ```Movie``` instances and possibly other class type instances, we can do it like this:
+If we would like to create an array holding ```Movie``` instances and also some other class type instances, we can do it like this:
 
 ```swift
 var anyObjectThings = [AnyObject]()

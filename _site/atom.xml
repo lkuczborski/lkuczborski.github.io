@@ -4,7 +4,7 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-07-30T11:24:44+02:00</updated>
+ <updated>2014-07-30T11:26:22+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
@@ -50,7 +50,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;If we would like to create an array holding &lt;code&gt;Movie&lt;/code&gt; instances and possibly other class type instances, we can do it like this:&lt;/p&gt;
+&lt;p&gt;If we would like to create an array holding &lt;code&gt;Movie&lt;/code&gt; instances and also some other class type instances, we can do it like this:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;var anyObjectThings = [AnyObject]()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;As we want to hold only class instances we don&amp;#39;t have to use [Any] type alias.&lt;/p&gt;
