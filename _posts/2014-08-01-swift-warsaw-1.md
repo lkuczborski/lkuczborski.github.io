@@ -5,7 +5,7 @@ description: Swift Warsaw #1 took place on 31st July 2014 at Macoscope HQ. Here 
 comments: true
 ---
 
-So we met yesterday at [Macoscope](http://macoscope.com) HQ for **Swift Warsaw 1** event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further, see you at our next meetup (TBA soon)! 💬🍺👍
+So we met yesterday at [Macoscope](http://macoscope.com) HQ for **Swift Warsaw #1** event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further, see you at our next meetup (TBA soon)! 💬🍺👍
 
 In the meantime here are the slides from yesterday's talks:
 
