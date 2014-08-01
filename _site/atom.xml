@@ -4,7 +4,7 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-08-01T16:06:24+02:00</updated>
+ <updated>2014-08-01T16:12:40+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
@@ -17,7 +17,11 @@
    <link href="http://kuczborski.com/2014/08/01/swift-warsaw-1/"/>
    <updated>2014-08-01T00:00:00+02:00</updated>
    <id>http://kuczborski.com/2014/08/01/swift-warsaw-1</id>
-   <content type="html">&lt;p&gt;Below are the slides from the talks given at &lt;strong&gt;Swift Warsaw #1&lt;/strong&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;So we met yesterday at &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt; HQ for &lt;strong&gt;Swift Warsaw 1&lt;/strong&gt; event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further and see you at our next meetup (TBA soon)! 💬👍🍺&lt;/p&gt;
+
+&lt;p&gt;In the meantime here are the slides from yesterday&amp;#39;s talks:&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;&amp;quot;Swiftroduction - An Introduction to Swift&amp;quot; by Łukasz Kuczborski:
 &lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;b0f33f70f9fd01311408323d6ac6076c&quot; data-ratio=&quot;1.77777777777778&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
@@ -29,8 +33,6 @@ Also available at &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&q
 &lt;p&gt;The last presentation, &amp;quot;Swift DSL Toolbelt&amp;quot; by Krzysztof Siejkowski, was created entirely using brilliant &lt;a href=&quot;https://github.com/jas/swift-playground-builder&quot;&gt;swift-playground-builder&lt;/a&gt; by &lt;a href=&quot;https://github.com/jas&quot;&gt;Jason Sandmayer&lt;/a&gt; and is  available at &lt;a href=&quot;https://github.com/siejkowski/swift-dsl-toolbelt&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr&gt;
-
-&lt;p&gt;I would like to once again thank all for coming to our first &lt;a href=&quot;http://swiftwarsaw.com&quot;&gt;Swift Warsaw&lt;/a&gt; event! It was really great to meet such a big crowd of Swifters or to-be-Swifters :) Hope our community will grow even further and see you at our next meet up! 💬👍🍺&lt;/p&gt;
 </content>
  </entry>
  

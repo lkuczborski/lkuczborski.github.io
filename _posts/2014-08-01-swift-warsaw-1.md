@@ -5,7 +5,11 @@ description: Slides from talks given at Swift Warsaw #1 event
 comments: true
 ---
 
-Below are the slides from the talks given at **Swift Warsaw #1**.
+So we met yesterday at [Macoscope](http://macoscope.com) HQ for **Swift Warsaw 1** event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further and see you at our next meetup (TBA soon)! 💬👍🍺
+
+In the meantime here are the slides from yesterday's talks:
+
+<!--more-->
 
 "Swiftroduction - An Introduction to Swift" by Łukasz Kuczborski:
 <script async class="speakerdeck-embed" data-id="b0f33f70f9fd01311408323d6ac6076c" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
@@ -19,4 +23,3 @@ The last presentation, "Swift DSL Toolbelt" by Krzysztof Siejkowski, was created
 
 ---
 
-I would like to once again thank all for coming to our first [Swift Warsaw](http://swiftwarsaw.com) event! It was really great to meet such a big crowd of Swifters or to-be-Swifters :) Hope our community will grow even further and see you at our next meet up! 💬👍🍺
