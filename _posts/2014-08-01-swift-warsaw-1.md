@@ -5,7 +5,7 @@ description: Swift Warsaw #1 took place on 31st July 2014 at Macoscope HQ. Here 
 comments: true
 ---
 
-So we met yesterday at [Macoscope](http://macoscope.com) HQ for **Swift Warsaw 1** event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further and see you at our next meetup (TBA soon)! 💬👍🍺
+So we met yesterday at [Macoscope](http://macoscope.com) HQ for **Swift Warsaw 1** event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further, see you at our next meetup (TBA soon)! 💬🍺👍
 
 In the meantime here are the slides from yesterday's talks:
 
@@ -20,6 +20,4 @@ Also available on [GitHub](https://github.com/jklausa/swiftinflux-talk).
 
 
 The last presentation, "Swift DSL Toolbelt" by Krzysztof Siejkowski, was created entirely using brilliant [swift-playground-builder](https://github.com/jas/swift-playground-builder) by [Jason Sandmayer](https://github.com/jas) and is  available on [GitHub](https://github.com/siejkowski/swift-dsl-toolbelt).
-
----
 
