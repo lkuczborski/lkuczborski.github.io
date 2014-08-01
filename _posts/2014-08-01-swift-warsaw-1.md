@@ -16,10 +16,10 @@ In the meantime here are the slides from yesterday's talks:
 
 "Swift In Flux" by Jan Klausa:
 <script async class="speakerdeck-embed" data-id="da064680fb0c0131d88c6a0d18b48761" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-Also available at [GitHub](https://github.com/jklausa/swiftinflux-talk).
+Also available on [GitHub](https://github.com/jklausa/swiftinflux-talk).
 
 
-The last presentation, "Swift DSL Toolbelt" by Krzysztof Siejkowski, was created entirely using brilliant [swift-playground-builder](https://github.com/jas/swift-playground-builder) by [Jason Sandmayer](https://github.com/jas) and is  available at [GitHub](https://github.com/siejkowski/swift-dsl-toolbelt).
+The last presentation, "Swift DSL Toolbelt" by Krzysztof Siejkowski, was created entirely using brilliant [swift-playground-builder](https://github.com/jas/swift-playground-builder) by [Jason Sandmayer](https://github.com/jas) and is  available on [GitHub](https://github.com/siejkowski/swift-dsl-toolbelt).
 
 ---
 
