@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Slides from Swift Warsaw 1
-description: Slides from talks given at Swift Warsaw #1 event 
+title: Swift Warsaw 1 aftermath
+description: Swift Warsaw #1 took place on 31st July 2014 at Macoscope HQ. Here you can find slides from talks given there. 
 comments: true
 ---
 
