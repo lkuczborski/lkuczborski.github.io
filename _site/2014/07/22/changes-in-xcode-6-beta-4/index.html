@@ -102,141 +102,164 @@
 
 <!--more-->
 
-<h2>TOC</h2>
+<h2 id="toc">TOC</h2>
+<p>### <a href="#access">Access Control</a>
+### <a href="#by">.by() -&gt; stride()</a>
+### <a href="#unicode">Unicode String improvements</a>
+### <a href="#modifiers">Revised Declaration Modifiers</a>
+### <a href="#landmarks">Landmarks</a></p>
 
-<h3><a href="#access">Access Control</a></h3>
+<hr />
 
-<h3><a href="#by">.by() -&gt; stride()</a></h3>
+<h3 id="a-idaccessaaccess-control"><a id="access"></a>Access Control</h3>
 
-<h3><a href="#unicode">Unicode String improvements</a></h3>
-
-<h3><a href="#modifiers">Revised Declaration Modifiers</a></h3>
-
-<h3><a href="#landmarks">Landmarks</a></h3>
-
-<hr>
-
-<h3><a id="access"></a>Access Control</h3>
-
-<h4>Access levels</h4>
-
+<h4 id="access-levels">Access levels</h4>
 <p>Entities can be:</p>
 
 <ul>
-<li><p><code>private</code></p>
-
-<p>Can only be accessed from within the source file where they are defined.</p></li>
-<li><p><code>internal</code></p>
-
-<p>Can be accessed anywhere within the target where they are defined.</p></li>
-<li><p><code>public</code></p>
-
-<p>Can be accessed from anywhere within the target and from any other context that imports the current target’s module.</p></li>
+  <li><code>private</code></li>
 </ul>
 
-<h4>Things to remember</h4>
+<p>Can only be accessed from within the source file where they are defined.</p>
 
 <ul>
-<li><p>Frameworks need the public API marked as public</p></li>
-<li><p>Implicitly-synthesized initializers for classes and structs are internal by default</p></li>
-<li><p>Generated header</p>
+  <li><code>internal</code></li>
+</ul>
+
+<p>Can be accessed anywhere within the target where they are defined.</p>
 
 <ul>
-<li>contains only <strong>public</strong> declarations for <strong>Frameworks</strong></li>
-<li><p>contains both <strong>public and internal</strong> declarations for <strong>Applications</strong></p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">// An example class in a framework target.
-public class ListItem: NSObject {
-  public var text: String
-  public var isComplete: Bool
-  // Readable throughout the module, but only writeable from
-  // within this file.
-  private(set) var UUID: NSUUID
-  public init(text: String, completed: Bool, UUID: NSUUID) {
-      self.text = text
-      self.isComplete = completed
-      self.UUID = UUID
-  }
-  func refreshIdentity() {
-      self.UUID = NSUUID()
-  }
-      // Must be public because it overrides a public method
-      // and is itself part of a public type.
-      public override func isEqual(object: AnyObject?) -&gt; Bool {
-          if let item = object as? ListItem {
-              return self.UUID == item.UUID
+  <li><code>public</code></li>
+</ul>
+
+<p>Can be accessed from anywhere within the target and from any other context that imports the current target’s module.</p>
+
+<h4 id="things-to-remember">Things to remember</h4>
+
+<ul>
+  <li>
+    <p>Frameworks need the public API marked as public</p>
+  </li>
+  <li>
+    <p>Implicitly-synthesized initializers for classes and structs are internal by default</p>
+  </li>
+  <li>
+    <p>Generated header</p>
+    <ul>
+      <li>contains only <strong>public</strong> declarations for <strong>Frameworks</strong></li>
+      <li>contains both <strong>public and internal</strong> declarations for <strong>Applications</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code>  ```swift
+  // An example class in a framework target.
+  public class ListItem: NSObject {
+      public var text: String
+      public var isComplete: Bool
+      // Readable throughout the module, but only writeable from
+      // within this file.
+      private(set) var UUID: NSUUID
+      public init(text: String, completed: Bool, UUID: NSUUID) {
+          self.text = text
+          self.isComplete = completed
+          self.UUID = UUID
       }
-      return false
+      func refreshIdentity() {
+          self.UUID = NSUUID()
+      }
+          // Must be public because it overrides a public method
+      	  // and is itself part of a public type.
+          public override func isEqual(object: AnyObject?) -&gt; Bool {
+              if let item = object as? ListItem {
+                  return self.UUID == item.UUID
+          }
+          return false
+      }
   }
-}
-</code></pre></div></li>
-</ul></li>
-<li><p>Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.</p>
+  ```
+</code></pre>
 
 <ul>
-<li> If you need a private method or property to be callable from Objective-C, you have to add
+  <li>Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.</li>
+</ul>
+
+<ul>
+  <li>If you need a private method or property to be callable from Objective-C, you have to add
 the <code>@objc</code> attribute to the declaration explicitly.</li>
-</ul></li>
 </ul>
 
-<h4>Limitations</h4>
+<h4 id="limitations">Limitations</h4>
 
 <ul>
-<li>Unit tests cannot interact with the classes and methods in an application unless they are marked public (unit test target is not part of the application module)</li>
+  <li>Unit tests cannot interact with the classes and methods in an application unless they are marked public (unit test target is not part of the application module)</li>
 </ul>
 
-<hr>
+<hr />
 
-<h3><a id="by"></a>.by() -&gt; stride()</h3>
+<h3 id="a-idbyaby---stride"><a id="by"></a>.by() -&gt; stride()</h3>
 
 <p>The .by() method for ranges has been replaced with general stride() functions.</p>
 
-<h4>Usage</h4>
-
+<h4 id="usage">Usage</h4>
 <ul>
-<li><p>for <strong>exlusive</strong> ranges:</p>
-
-<p><code>stride(from: to: by:)</code></p></li>
-<li><p>for <strong>inclusive</strong> ranges:</p>
-
-<p><code>stride(from: through: by:)</code></p></li>
+  <li>for <strong>exlusive</strong> ranges:</li>
 </ul>
 
-<h4>Examples</h4>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">stride(from: x, to: y, by: z)           //was: (x..&lt;y).by(z)
+<p><code>stride(from: to: by:)</code></p>
+
+<ul>
+  <li>for <strong>inclusive</strong> ranges:</li>
+</ul>
+
+<p><code>stride(from: through: by:)</code></p>
+
+<h4 id="examples">Examples</h4>
+<p><code>swift
+stride(from: x, to: y, by: z)           //was: (x..&lt;y).by(z)
 stride(from: x, through: y, by: z)      //was: (x...y).by(z)
-</code></pre></div>
-<hr>
+</code></p>
 
-<h2><a id="unicode"></a>Unicode String improvements</h2>
+<hr />
 
+<h2 id="a-idunicodeaunicode-string-improvements"><a id="unicode"></a>Unicode String improvements</h2>
 <p>The <code>String</code> type now implements a grapheme cluster segmentation algorithm to
 produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.</p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">// returns 15
-countElements(&quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”)
-</code></pre></div>
+
+<p><code>swift
+// returns 15
+countElements("a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”)
+</code></p>
+
 <p>A <code>for-in</code> loop over the string produces each human visible character in sequence.</p>
 
-<hr>
+<hr />
 
-<h2><a id="modifiers"></a>Revised Declaration Modifiers</h2>
-
+<h2 id="a-idmodifiersarevised-declaration-modifiers"><a id="modifiers"></a>Revised Declaration Modifiers</h2>
 <p>The <code>@final</code>, <code>@lazy</code>, <code>@optional</code>, and <code>@required</code> attributes have been converted to declaration modifiers, specified without an <code>@</code> sign.</p>
 
 <ul>
-<li><p><code>@final</code> -&gt; <code>final</code></p></li>
-<li><p><code>@lazy</code> -&gt; <code>lazy</code></p></li>
-<li><p><code>@optional</code> -&gt; <code>optional</code></p></li>
-<li><p><code>@required</code> -&gt; <code>required</code></p></li>
+  <li>
+    <p><code>@final</code> -&gt; <code>final</code></p>
+  </li>
+  <li>
+    <p><code>@lazy</code> -&gt; <code>lazy</code></p>
+  </li>
+  <li>
+    <p><code>@optional</code> -&gt; <code>optional</code></p>
+  </li>
+  <li>
+    <p><code>@required</code> -&gt; <code>required</code></p>
+  </li>
 </ul>
 
-<hr>
+<hr />
 
-<h2><a id="landmarks"></a>Landmarks</h2>
-
+<h2 id="a-idlandmarksalandmarks"><a id="landmarks"></a>Landmarks</h2>
 <p>Finally! Xcode now supports <code>//MARK:</code>, <code>//TODO:</code> and <code>//FIXME</code> landmarks to annotate your code and
 lists them in the jump bar.</p>
 
-<hr>
+<hr />
 
 <p>Let me know if you think I missed something important and feel free to comment below!</p>
 
@@ -267,7 +290,7 @@ lists them in the jump bar.</p>
       <li>
         <h3>
           <a href="/2014/08/01/swift-warsaw-1/">
-            Slides from Swift Warsaw 1
+            Swift Warsaw 1 aftermath
             <small>01 Aug 2014</small>
           </a>
         </h3>

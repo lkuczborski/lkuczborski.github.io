@@ -101,63 +101,80 @@
   <p>Swift provides two special type aliases for working with non-specific types:</p>
 
 <ul>
-<li><code>AnyObject</code> can represent an instance of any class type.</li>
-<li><code>Any</code> can represent an instance of any type at all, apart from function types.</li>
+  <li><code>AnyObject</code> can represent an instance of any class type.</li>
+  <li><code>Any</code> can represent an instance of any type at all, apart from function types.</li>
 </ul>
 
 <!--more-->
 
-<p>Let&#39;s assume we have <code>Movie</code> class...</p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">class Movie {
+<p>Let’s assume we have <code>Movie</code> class…</p>
+
+<p><code>swift
+class Movie {
     let title: String
     init(_ title: String) {
         self.title = title;
     }
     func simpleDescription() -&gt; String {
-        return &quot;Title: \&quot;\(title)\&quot;.&quot;
+        return "Title: \"\(title)\"."
     }
 }
-</code></pre></div>
-<p>There is one interesting thing in the above example – the <code>_</code> sign:   </p>
+</code></p>
+
+<p>There is one interesting thing in the above example – the <code>_</code> sign:	</p>
 
 <ul>
-<li><p><strong>We can use <code>_</code> sign when we want to omit providing parameter name in <code>init</code> method.</strong> </p>
-
-<p>In this case we can create <code>Movie</code> object like this...</p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">Movie(&quot;Forrest Gump&quot;)
-</code></pre></div>
-<p>...instead of</p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">Movie(title: &quot;Forrest Gump&quot;)
-</code></pre></div></li>
+  <li><strong>We can use <code>_</code> sign when we want to omit providing parameter name in <code>init</code> method.</strong> </li>
 </ul>
 
-<p>If we would like to create an array holding <code>Movie</code> instances and also some other class type instances, we can do it like this:</p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">var anyObjectThings = [AnyObject]()
-</code></pre></div>
-<p>As we want to hold only class instances we don&#39;t have to use [Any] type alias.</p>
+<pre><code>In this case we can create ```Movie``` object like this...
 
-<h2></h2>
+```swift
+Movie("Forrest Gump")
+```
+
+...instead of
+
+```swift
+Movie(title: "Forrest Gump")
+```
+</code></pre>
+
+<p>If we would like to create an array holding <code>Movie</code> instances and also some other class type instances, we can do it like this:</p>
+
+<p><code>swift
+var anyObjectThings = [AnyObject]()
+</code></p>
+
+<p>As we want to hold only class instances we don’t have to use [Any] type alias.</p>
+
+<p>-</p>
 
 <p>We than append new <code>Movie</code> object to the array like this: </p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">anyObjectThings.append(Movie(&quot;Forrest Gump&quot;))
 
-println((anyObjectThings[0] as Movie).simpleDescription()) 
-// returns &quot;Title: &quot;Forrest Gump&quot;.&quot;
-</code></pre></div>
+<p>```swift
+anyObjectThings.append(Movie(“Forrest Gump”))</p>
+
+<p>println((anyObjectThings[0] as Movie).simpleDescription()) 
+// returns “Title: “Forrest Gump”.”
+```</p>
+
 <p>We use [Any] when we want to support more than just class types, for eg.:</p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">var anyThings = [Any]()
 
-anyThings.append(42)
+<p>```swift
+var anyThings = <a href="">Any</a></p>
+
+<p>anyThings.append(42)
 anyThings.append(3.14159)
-anyThings.append(&quot;hello&quot;)
+anyThings.append(“hello”)
 anyThings.append((3.0, 5.0))
-anyThings.append(Movie(&quot;Godzilla&quot;))
-</code></pre></div>
-<p>Also see my previous blog post on creating Arrays and Dictionaries with various value types <a href="/2014/07/21/arrays-and-dicts">here</a>.</p>
+anyThings.append(Movie(“Godzilla”))
+```
+Also see my previous blog post on creating Arrays and Dictionaries with various value types <a href="/2014/07/21/arrays-and-dicts">here</a>.</p>
 
 <p><strong>Apple warns to use <code>Any</code> and <code>AnyObject</code> only when you explicitly need the behavior and capabilities they provide.</strong> It is always better to be specific about the types you expect to work with in your code.</p>
 
-<p>There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of <code>[AnyObject]</code>, or &quot;an array of values of any object type&quot;. This is because Objective-C does not have explicitly typed arrays like Swift does.</p>
+<p>There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of <code>[AnyObject]</code>, or “an array of values of any object type”. This is because Objective-C does not have explicitly typed arrays like Swift does.</p>
 
 </div>
 
@@ -186,7 +203,7 @@ anyThings.append(Movie(&quot;Godzilla&quot;))
       <li>
         <h3>
           <a href="/2014/08/01/swift-warsaw-1/">
-            Slides from Swift Warsaw 1
+            Swift Warsaw 1 aftermath
             <small>01 Aug 2014</small>
           </a>
         </h3>

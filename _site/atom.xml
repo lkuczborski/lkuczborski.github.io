@@ -4,7 +4,7 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-08-01T16:12:40+02:00</updated>
+ <updated>2014-08-03T12:25:49+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
@@ -13,26 +13,25 @@
 
  
  <entry>
-   <title>Slides from Swift Warsaw 1</title>
+   <title>Swift Warsaw 1 aftermath</title>
    <link href="http://kuczborski.com/2014/08/01/swift-warsaw-1/"/>
    <updated>2014-08-01T00:00:00+02:00</updated>
    <id>http://kuczborski.com/2014/08/01/swift-warsaw-1</id>
-   <content type="html">&lt;p&gt;So we met yesterday at &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt; HQ for &lt;strong&gt;Swift Warsaw 1&lt;/strong&gt; event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further and see you at our next meetup (TBA soon)! 💬👍🍺&lt;/p&gt;
+   <content type="html">&lt;p&gt;So we met yesterday at &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt; HQ for &lt;strong&gt;Swift Warsaw #1&lt;/strong&gt; event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further, see you at our next meetup (TBA soon)! 💬🍺👍&lt;/p&gt;
 
-&lt;p&gt;In the meantime here are the slides from yesterday&amp;#39;s talks:&lt;/p&gt;
+&lt;p&gt;In the meantime here are the slides from yesterday’s talks:&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&amp;quot;Swiftroduction - An Introduction to Swift&amp;quot; by Łukasz Kuczborski:
-&lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;b0f33f70f9fd01311408323d6ac6076c&quot; data-ratio=&quot;1.77777777777778&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;“Swiftroduction - An Introduction to Swift” by Łukasz Kuczborski:
+&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;b0f33f70f9fd01311408323d6ac6076c&quot; data-ratio=&quot;1.77777777777778&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;quot;Swift In Flux&amp;quot; by Jan Klausa:
-&lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;da064680fb0c0131d88c6a0d18b48761&quot; data-ratio=&quot;1.77777777777778&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
-Also available at &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;“Swift In Flux” by Jan Klausa:
+&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;da064680fb0c0131d88c6a0d18b48761&quot; data-ratio=&quot;1.77777777777778&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
+Also available on &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The last presentation, &amp;quot;Swift DSL Toolbelt&amp;quot; by Krzysztof Siejkowski, was created entirely using brilliant &lt;a href=&quot;https://github.com/jas/swift-playground-builder&quot;&gt;swift-playground-builder&lt;/a&gt; by &lt;a href=&quot;https://github.com/jas&quot;&gt;Jason Sandmayer&lt;/a&gt; and is  available at &lt;a href=&quot;https://github.com/siejkowski/swift-dsl-toolbelt&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The last presentation, “Swift DSL Toolbelt” by Krzysztof Siejkowski, was created entirely using brilliant &lt;a href=&quot;https://github.com/jas/swift-playground-builder&quot;&gt;swift-playground-builder&lt;/a&gt; by &lt;a href=&quot;https://github.com/jas&quot;&gt;Jason Sandmayer&lt;/a&gt; and is  available on &lt;a href=&quot;https://github.com/siejkowski/swift-dsl-toolbelt&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
-&lt;hr&gt;
 </content>
  </entry>
  
@@ -44,63 +43,80 @@ Also available at &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&q
    <content type="html">&lt;p&gt;Swift provides two special type aliases for working with non-specific types:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;AnyObject&lt;/code&gt; can represent an instance of any class type.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Any&lt;/code&gt; can represent an instance of any type at all, apart from function types.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;AnyObject&lt;/code&gt; can represent an instance of any class type.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Any&lt;/code&gt; can represent an instance of any type at all, apart from function types.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;Let&amp;#39;s assume we have &lt;code&gt;Movie&lt;/code&gt; class...&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;class Movie {
+&lt;p&gt;Let’s assume we have &lt;code&gt;Movie&lt;/code&gt; class…&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;swift
+class Movie {
     let title: String
     init(_ title: String) {
         self.title = title;
     }
     func simpleDescription() -&amp;gt; String {
-        return &amp;quot;Title: \&amp;quot;\(title)\&amp;quot;.&amp;quot;
+        return &quot;Title: \&quot;\(title)\&quot;.&quot;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;There is one interesting thing in the above example – the &lt;code&gt;_&lt;/code&gt; sign:   &lt;/p&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There is one interesting thing in the above example – the &lt;code&gt;_&lt;/code&gt; sign:	&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;We can use &lt;code&gt;_&lt;/code&gt; sign when we want to omit providing parameter name in &lt;code&gt;init&lt;/code&gt; method.&lt;/strong&gt; &lt;/p&gt;
-
-&lt;p&gt;In this case we can create &lt;code&gt;Movie&lt;/code&gt; object like this...&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;Movie(&amp;quot;Forrest Gump&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;...instead of&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;Movie(title: &amp;quot;Forrest Gump&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;We can use &lt;code&gt;_&lt;/code&gt; sign when we want to omit providing parameter name in &lt;code&gt;init&lt;/code&gt; method.&lt;/strong&gt; &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;If we would like to create an array holding &lt;code&gt;Movie&lt;/code&gt; instances and also some other class type instances, we can do it like this:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;var anyObjectThings = [AnyObject]()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;As we want to hold only class instances we don&amp;#39;t have to use [Any] type alias.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;In this case we can create ```Movie``` object like this...
 
-&lt;h2&gt;&lt;/h2&gt;
+```swift
+Movie(&quot;Forrest Gump&quot;)
+```
+
+...instead of
+
+```swift
+Movie(title: &quot;Forrest Gump&quot;)
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we would like to create an array holding &lt;code&gt;Movie&lt;/code&gt; instances and also some other class type instances, we can do it like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;swift
+var anyObjectThings = [AnyObject]()
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;As we want to hold only class instances we don’t have to use [Any] type alias.&lt;/p&gt;
+
+&lt;p&gt;-&lt;/p&gt;
 
 &lt;p&gt;We than append new &lt;code&gt;Movie&lt;/code&gt; object to the array like this: &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;anyObjectThings.append(Movie(&amp;quot;Forrest Gump&amp;quot;))
 
-println((anyObjectThings[0] as Movie).simpleDescription()) 
-// returns &amp;quot;Title: &amp;quot;Forrest Gump&amp;quot;.&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;```swift
+anyObjectThings.append(Movie(“Forrest Gump”))&lt;/p&gt;
+
+&lt;p&gt;println((anyObjectThings[0] as Movie).simpleDescription()) 
+// returns “Title: “Forrest Gump”.”
+```&lt;/p&gt;
+
 &lt;p&gt;We use [Any] when we want to support more than just class types, for eg.:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;var anyThings = [Any]()
 
-anyThings.append(42)
+&lt;p&gt;```swift
+var anyThings = &lt;a href=&quot;&quot;&gt;Any&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;anyThings.append(42)
 anyThings.append(3.14159)
-anyThings.append(&amp;quot;hello&amp;quot;)
+anyThings.append(“hello”)
 anyThings.append((3.0, 5.0))
-anyThings.append(Movie(&amp;quot;Godzilla&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Also see my previous blog post on creating Arrays and Dictionaries with various value types &lt;a href=&quot;/2014/07/21/arrays-and-dicts&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+anyThings.append(Movie(“Godzilla”))
+```
+Also see my previous blog post on creating Arrays and Dictionaries with various value types &lt;a href=&quot;/2014/07/21/arrays-and-dicts&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Apple warns to use &lt;code&gt;Any&lt;/code&gt; and &lt;code&gt;AnyObject&lt;/code&gt; only when you explicitly need the behavior and capabilities they provide.&lt;/strong&gt; It is always better to be specific about the types you expect to work with in your code.&lt;/p&gt;
 
-&lt;p&gt;There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of &lt;code&gt;[AnyObject]&lt;/code&gt;, or &amp;quot;an array of values of any object type&amp;quot;. This is because Objective-C does not have explicitly typed arrays like Swift does.&lt;/p&gt;
+&lt;p&gt;There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of &lt;code&gt;[AnyObject]&lt;/code&gt;, or “an array of values of any object type”. This is because Objective-C does not have explicitly typed arrays like Swift does.&lt;/p&gt;
 </content>
  </entry>
  
@@ -111,13 +127,11 @@ anyThings.append(Movie(&amp;quot;Godzilla&amp;quot;))
    <id>http://kuczborski.com/2014/07/25/introducing-swift-warsaw</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://narf.pl&quot;&gt;Maciek&lt;/a&gt; has already &lt;a href=&quot;http://macoscope.com/blog/the-swift-community-in-poland-a-developers-diary/#more&quot;&gt;written&lt;/a&gt; a great blog post about what &lt;a href=&quot;http://swiftwarsaw.com&quot;&gt;Swift Warsaw&lt;/a&gt; is, and how it came to be. I just wanted to add my two cents.&lt;/p&gt;
 
-&lt;p&gt;The idea came to my head at &lt;a href=&quot;http://swiftcrunch.com&quot;&gt;#SwiftCrunch&lt;/a&gt; where I met a lot of great devs and wanted the spirit of hackathon to live after the event. I wanted to create a great community. The one that would like to meet regularly and talk all things Swift and more. The one that would benefit from such meetups and level up their and our knowledge about Apple&amp;#39;s &amp;quot;one more thing&amp;quot; for developers this year. I hope that we will accomplish exactly that.&lt;/p&gt;
+&lt;p&gt;The idea came to my head at &lt;a href=&quot;http://swiftcrunch.com&quot;&gt;#SwiftCrunch&lt;/a&gt; where I met a lot of great devs and wanted the spirit of hackathon to live after the event. I wanted to create a great community. The one that would like to meet regularly and talk all things Swift and more. The one that would benefit from such meetups and level up their and our knowledge about Apple’s “one more thing” for developers this year. I hope that we will accomplish exactly that.&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&quot;https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png&quot; alt=&quot;Swift Warsaw logo&quot;&gt;&lt;/p&gt;
-
-&lt;h4&gt;Swift Warsaw logo&lt;/h4&gt;
-
-&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;center&gt;![Swift Warsaw logo](https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png)
+####Swift Warsaw logo
+&lt;/center&gt;
 
 &lt;p&gt;I would like to thank &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt; in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - &lt;a href=&quot;https://narf.pl&quot;&gt;Maciek Konieczny&lt;/a&gt;, &lt;a href=&quot;http://klausa.pl&quot;&gt;Jan Klausa&lt;/a&gt;, &lt;a href=&quot;https://github.com/wczekalski&quot;&gt;Wojtek Czekalski&lt;/a&gt; and &lt;a href=&quot;https://github.com/niczyja&quot;&gt;Maciek Sienkiewicz&lt;/a&gt; for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on &lt;a href=&quot;http://www.meetup.com/Swift-Warsaw/events/195521922/&quot;&gt;Meetup&lt;/a&gt; and &lt;a href=&quot;https://www.facebook.com/events/715788445155070/&quot;&gt;Facebook&lt;/a&gt;). &lt;/p&gt;
 
@@ -140,141 +154,164 @@ Yours Swiftly,&lt;br /&gt;
 
 &lt;!--more--&gt;
 
-&lt;h2&gt;TOC&lt;/h2&gt;
+&lt;h2 id=&quot;toc&quot;&gt;TOC&lt;/h2&gt;
+&lt;p&gt;### &lt;a href=&quot;#access&quot;&gt;Access Control&lt;/a&gt;
+### &lt;a href=&quot;#by&quot;&gt;.by() -&amp;gt; stride()&lt;/a&gt;
+### &lt;a href=&quot;#unicode&quot;&gt;Unicode String improvements&lt;/a&gt;
+### &lt;a href=&quot;#modifiers&quot;&gt;Revised Declaration Modifiers&lt;/a&gt;
+### &lt;a href=&quot;#landmarks&quot;&gt;Landmarks&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;&lt;a href=&quot;#access&quot;&gt;Access Control&lt;/a&gt;&lt;/h3&gt;
+&lt;hr /&gt;
 
-&lt;h3&gt;&lt;a href=&quot;#by&quot;&gt;.by() -&amp;gt; stride()&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;a-idaccessaaccess-control&quot;&gt;&lt;a id=&quot;access&quot;&gt;&lt;/a&gt;Access Control&lt;/h3&gt;
 
-&lt;h3&gt;&lt;a href=&quot;#unicode&quot;&gt;Unicode String improvements&lt;/a&gt;&lt;/h3&gt;
-
-&lt;h3&gt;&lt;a href=&quot;#modifiers&quot;&gt;Revised Declaration Modifiers&lt;/a&gt;&lt;/h3&gt;
-
-&lt;h3&gt;&lt;a href=&quot;#landmarks&quot;&gt;Landmarks&lt;/a&gt;&lt;/h3&gt;
-
-&lt;hr&gt;
-
-&lt;h3&gt;&lt;a id=&quot;access&quot;&gt;&lt;/a&gt;Access Control&lt;/h3&gt;
-
-&lt;h4&gt;Access levels&lt;/h4&gt;
-
+&lt;h4 id=&quot;access-levels&quot;&gt;Access levels&lt;/h4&gt;
 &lt;p&gt;Entities can be:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;private&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Can only be accessed from within the source file where they are defined.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;internal&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Can be accessed anywhere within the target where they are defined.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;public&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Can be accessed from anywhere within the target and from any other context that imports the current target’s module.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;private&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;Things to remember&lt;/h4&gt;
+&lt;p&gt;Can only be accessed from within the source file where they are defined.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Frameworks need the public API marked as public&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Implicitly-synthesized initializers for classes and structs are internal by default&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Generated header&lt;/p&gt;
+  &lt;li&gt;&lt;code&gt;internal&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Can be accessed anywhere within the target where they are defined.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;contains only &lt;strong&gt;public&lt;/strong&gt; declarations for &lt;strong&gt;Frameworks&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;contains both &lt;strong&gt;public and internal&lt;/strong&gt; declarations for &lt;strong&gt;Applications&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;// An example class in a framework target.
-public class ListItem: NSObject {
-  public var text: String
-  public var isComplete: Bool
-  // Readable throughout the module, but only writeable from
-  // within this file.
-  private(set) var UUID: NSUUID
-  public init(text: String, completed: Bool, UUID: NSUUID) {
-      self.text = text
-      self.isComplete = completed
-      self.UUID = UUID
-  }
-  func refreshIdentity() {
-      self.UUID = NSUUID()
-  }
-      // Must be public because it overrides a public method
-      // and is itself part of a public type.
-      public override func isEqual(object: AnyObject?) -&amp;gt; Bool {
-          if let item = object as? ListItem {
-              return self.UUID == item.UUID
+  &lt;li&gt;&lt;code&gt;public&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Can be accessed from anywhere within the target and from any other context that imports the current target’s module.&lt;/p&gt;
+
+&lt;h4 id=&quot;things-to-remember&quot;&gt;Things to remember&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Frameworks need the public API marked as public&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Implicitly-synthesized initializers for classes and structs are internal by default&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Generated header&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;contains only &lt;strong&gt;public&lt;/strong&gt; declarations for &lt;strong&gt;Frameworks&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;contains both &lt;strong&gt;public and internal&lt;/strong&gt; declarations for &lt;strong&gt;Applications&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;  ```swift
+  // An example class in a framework target.
+  public class ListItem: NSObject {
+      public var text: String
+      public var isComplete: Bool
+      // Readable throughout the module, but only writeable from
+      // within this file.
+      private(set) var UUID: NSUUID
+      public init(text: String, completed: Bool, UUID: NSUUID) {
+          self.text = text
+          self.isComplete = completed
+          self.UUID = UUID
       }
-      return false
+      func refreshIdentity() {
+          self.UUID = NSUUID()
+      }
+          // Must be public because it overrides a public method
+      	  // and is itself part of a public type.
+          public override func isEqual(object: AnyObject?) -&amp;gt; Bool {
+              if let item = object as? ListItem {
+                  return self.UUID == item.UUID
+          }
+          return false
+      }
   }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.&lt;/p&gt;
+  ```
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt; If you need a private method or property to be callable from Objective-C, you have to add
+  &lt;li&gt;Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If you need a private method or property to be callable from Objective-C, you have to add
 the &lt;code&gt;@objc&lt;/code&gt; attribute to the declaration explicitly.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;Limitations&lt;/h4&gt;
+&lt;h4 id=&quot;limitations&quot;&gt;Limitations&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Unit tests cannot interact with the classes and methods in an application unless they are marked public (unit test target is not part of the application module)&lt;/li&gt;
+  &lt;li&gt;Unit tests cannot interact with the classes and methods in an application unless they are marked public (unit test target is not part of the application module)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h3&gt;&lt;a id=&quot;by&quot;&gt;&lt;/a&gt;.by() -&amp;gt; stride()&lt;/h3&gt;
+&lt;h3 id=&quot;a-idbyaby---stride&quot;&gt;&lt;a id=&quot;by&quot;&gt;&lt;/a&gt;.by() -&amp;gt; stride()&lt;/h3&gt;
 
 &lt;p&gt;The .by() method for ranges has been replaced with general stride() functions.&lt;/p&gt;
 
-&lt;h4&gt;Usage&lt;/h4&gt;
-
+&lt;h4 id=&quot;usage&quot;&gt;Usage&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;for &lt;strong&gt;exlusive&lt;/strong&gt; ranges:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;stride(from: to: by:)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;for &lt;strong&gt;inclusive&lt;/strong&gt; ranges:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;stride(from: through: by:)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;for &lt;strong&gt;exlusive&lt;/strong&gt; ranges:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;Examples&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;stride(from: x, to: y, by: z)           //was: (x..&amp;lt;y).by(z)
+&lt;p&gt;&lt;code&gt;stride(from: to: by:)&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;for &lt;strong&gt;inclusive&lt;/strong&gt; ranges:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;stride(from: through: by:)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;examples&quot;&gt;Examples&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;swift
+stride(from: x, to: y, by: z)           //was: (x..&amp;lt;y).by(z)
 stride(from: x, through: y, by: z)      //was: (x...y).by(z)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2&gt;&lt;a id=&quot;unicode&quot;&gt;&lt;/a&gt;Unicode String improvements&lt;/h2&gt;
+&lt;hr /&gt;
 
+&lt;h2 id=&quot;a-idunicodeaunicode-string-improvements&quot;&gt;&lt;a id=&quot;unicode&quot;&gt;&lt;/a&gt;Unicode String improvements&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;String&lt;/code&gt; type now implements a grapheme cluster segmentation algorithm to
 produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;// returns 15
-countElements(&amp;quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;swift
+// returns 15
+countElements(&quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”)
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;A &lt;code&gt;for-in&lt;/code&gt; loop over the string produces each human visible character in sequence.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h2&gt;&lt;a id=&quot;modifiers&quot;&gt;&lt;/a&gt;Revised Declaration Modifiers&lt;/h2&gt;
-
+&lt;h2 id=&quot;a-idmodifiersarevised-declaration-modifiers&quot;&gt;&lt;a id=&quot;modifiers&quot;&gt;&lt;/a&gt;Revised Declaration Modifiers&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;@final&lt;/code&gt;, &lt;code&gt;@lazy&lt;/code&gt;, &lt;code&gt;@optional&lt;/code&gt;, and &lt;code&gt;@required&lt;/code&gt; attributes have been converted to declaration modifiers, specified without an &lt;code&gt;@&lt;/code&gt; sign.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;@final&lt;/code&gt; -&amp;gt; &lt;code&gt;final&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;@lazy&lt;/code&gt; -&amp;gt; &lt;code&gt;lazy&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;@optional&lt;/code&gt; -&amp;gt; &lt;code&gt;optional&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;@required&lt;/code&gt; -&amp;gt; &lt;code&gt;required&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;@final&lt;/code&gt; -&amp;gt; &lt;code&gt;final&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;@lazy&lt;/code&gt; -&amp;gt; &lt;code&gt;lazy&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;@optional&lt;/code&gt; -&amp;gt; &lt;code&gt;optional&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;@required&lt;/code&gt; -&amp;gt; &lt;code&gt;required&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h2&gt;&lt;a id=&quot;landmarks&quot;&gt;&lt;/a&gt;Landmarks&lt;/h2&gt;
-
+&lt;h2 id=&quot;a-idlandmarksalandmarks&quot;&gt;&lt;a id=&quot;landmarks&quot;&gt;&lt;/a&gt;Landmarks&lt;/h2&gt;
 &lt;p&gt;Finally! Xcode now supports &lt;code&gt;//MARK:&lt;/code&gt;, &lt;code&gt;//TODO:&lt;/code&gt; and &lt;code&gt;//FIXME&lt;/code&gt; landmarks to annotate your code and
 lists them in the jump bar.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;Let me know if you think I missed something important and feel free to comment below!&lt;/p&gt;
 </content>
@@ -288,13 +325,19 @@ lists them in the jump bar.&lt;/p&gt;
    <content type="html">&lt;p&gt;Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries.&lt;/p&gt;
 
 &lt;p&gt;Here is how you can now create an Array with different value types:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;/* Create an Array with different value types */
-var arr: [Any] = [&amp;quot;aString&amp;quot;, 1.23, true]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;swift
+/* Create an Array with different value types */
+var arr: [Any] = [&quot;aString&quot;, 1.23, true]
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;And here is the same for Dictionary:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;swift language-swift&quot; data-lang=&quot;swift&quot;&gt;/* Create a Dictionary with different value types */
-var dict: [String:Any] = [&amp;quot;key1&amp;quot;:&amp;quot;aString&amp;quot;, &amp;quot;key2&amp;quot;:1.23, &amp;quot;key3&amp;quot;:true]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+
+&lt;p&gt;&lt;code&gt;swift
+/* Create a Dictionary with different value types */
+var dict: [String:Any] = [&quot;key1&quot;:&quot;aString&quot;, &quot;key2&quot;:1.23, &quot;key3&quot;:true]
+&lt;/code&gt;&lt;/p&gt;
+</content>
  </entry>
  
 

@@ -100,15 +100,16 @@
   <div class="">
     <h1 class="post-title">
       <a href="/2014/08/01/swift-warsaw-1/">
-        Slides from Swift Warsaw 1
+        Swift Warsaw 1 aftermath
       </a>
     </h1>
 
     <span class="post-date">01 Aug 2014</span>
 
-    <p>So we met yesterday at <a href="http://macoscope.com">Macoscope</a> HQ for <strong>Swift Warsaw 1</strong> event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further and see you at our next meetup (TBA soon)! 💬👍🍺</p>
+    <p>So we met yesterday at <a href="http://macoscope.com">Macoscope</a> HQ for <strong>Swift Warsaw #1</strong> event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further, see you at our next meetup (TBA soon)! 💬🍺👍</p>
 
-<p>In the meantime here are the slides from yesterday&#39;s talks:</p>
+<p>In the meantime here are the slides from yesterday’s talks:</p>
+
 
     
       <a href="/2014/08/01/swift-warsaw-1/">Read more...</a>
@@ -131,9 +132,10 @@
     <p>Swift provides two special type aliases for working with non-specific types:</p>
 
 <ul>
-<li><code>AnyObject</code> can represent an instance of any class type.</li>
-<li><code>Any</code> can represent an instance of any type at all, apart from function types.</li>
+  <li><code>AnyObject</code> can represent an instance of any class type.</li>
+  <li><code>Any</code> can represent an instance of any type at all, apart from function types.</li>
 </ul>
+
 
     
       <a href="/2014/07/29/any-vs-anyobject/">Read more...</a>
@@ -155,13 +157,11 @@
 
     <p><a href="http://narf.pl">Maciek</a> has already <a href="http://macoscope.com/blog/the-swift-community-in-poland-a-developers-diary/#more">written</a> a great blog post about what <a href="http://swiftwarsaw.com">Swift Warsaw</a> is, and how it came to be. I just wanted to add my two cents.</p>
 
-<p>The idea came to my head at <a href="http://swiftcrunch.com">#SwiftCrunch</a> where I met a lot of great devs and wanted the spirit of hackathon to live after the event. I wanted to create a great community. The one that would like to meet regularly and talk all things Swift and more. The one that would benefit from such meetups and level up their and our knowledge about Apple&#39;s &quot;one more thing&quot; for developers this year. I hope that we will accomplish exactly that.</p>
+<p>The idea came to my head at <a href="http://swiftcrunch.com">#SwiftCrunch</a> where I met a lot of great devs and wanted the spirit of hackathon to live after the event. I wanted to create a great community. The one that would like to meet regularly and talk all things Swift and more. The one that would benefit from such meetups and level up their and our knowledge about Apple’s “one more thing” for developers this year. I hope that we will accomplish exactly that.</p>
 
-<p><center><img src="https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png" alt="Swift Warsaw logo"></p>
-
-<h4>Swift Warsaw logo</h4>
-
-<p></center></p>
+<center>![Swift Warsaw logo](https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png)
+####Swift Warsaw logo
+</center>
 
 <p>I would like to thank <a href="http://macoscope.com">Macoscope</a> in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - <a href="https://narf.pl">Maciek Konieczny</a>, <a href="http://klausa.pl">Jan Klausa</a>, <a href="https://github.com/wczekalski">Wojtek Czekalski</a> and <a href="https://github.com/niczyja">Maciek Sienkiewicz</a> for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on <a href="http://www.meetup.com/Swift-Warsaw/events/195521922/">Meetup</a> and <a href="https://www.facebook.com/events/715788445155070/">Facebook</a>). </p>
 
@@ -172,6 +172,7 @@
 <p><br />
 Yours Swiftly,<br />
 Łukasz</p>
+
 
     
 
@@ -190,6 +191,7 @@ Yours Swiftly,<br />
     <span class="post-date">22 Jul 2014</span>
 
     <p>Xcode 6 Beta 4 brought some important changes related to constantly evolving Swift Language. Below is a compilation of the most important ones.</p>
+
 
     
       <a href="/2014/07/22/changes-in-xcode-6-beta-4/">Read more...</a>
@@ -212,13 +214,20 @@ Yours Swiftly,<br />
     <p>Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries.</p>
 
 <p>Here is how you can now create an Array with different value types:</p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">/* Create an Array with different value types */
-var arr: [Any] = [&quot;aString&quot;, 1.23, true]
-</code></pre></div>
+
+<p><code>swift
+/* Create an Array with different value types */
+var arr: [Any] = ["aString", 1.23, true]
+</code></p>
+
 <p>And here is the same for Dictionary:</p>
-<div class="highlight"><pre><code class="swift language-swift" data-lang="swift">/* Create a Dictionary with different value types */
-var dict: [String:Any] = [&quot;key1&quot;:&quot;aString&quot;, &quot;key2&quot;:1.23, &quot;key3&quot;:true]
-</code></pre></div>
+
+<p><code>swift
+/* Create a Dictionary with different value types */
+var dict: [String:Any] = ["key1":"aString", "key2":1.23, "key3":true]
+</code></p>
+
+
     
 
     
