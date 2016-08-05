@@ -4,13 +4,28 @@
  <title>Yours Swiftly</title>
  <link href="http://kuczborski.com/atom.xml" rel="self"/>
  <link href="http://kuczborski.com/"/>
- <updated>2014-08-03T12:25:49+02:00</updated>
+ <updated>2016-08-05T15:51:51+02:00</updated>
  <id>http://kuczborski.com</id>
  <author>
    <name>Łukasz Kuczborski</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Two years of Swift Warsaw 🎉</title>
+   <link href="http://kuczborski.com/2016/08/05/two-years-of-swift-warsaw/"/>
+   <updated>2016-08-05T00:00:00+02:00</updated>
+   <id>http://kuczborski.com/2016/08/05/two-years-of-swift-warsaw</id>
+   <content type="html">&lt;p&gt;It’s been two years since our first meetup. A lot of things happend in the meantime. We have a new place for our meetups (Thanks &lt;a href=&quot;https://www.syncano.io&quot;&gt;Syncano&lt;/a&gt;!), new sponsors (&lt;a href=&quot;https://www.syncano.io&quot;&gt;Syncano&lt;/a&gt;, &lt;a href=&quot;http://10clouds.com&quot;&gt;10clouds&lt;/a&gt;, &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt;), we changed our logo. But what is most important is that we grew. A lot.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;http://photos4.meetupstatic.com/photos/event/8/d/4/9/global_446316169.jpeg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.meetup.com/Swift-Warsaw/&quot;&gt;Swift Warsaw&lt;/a&gt; has now over 400(!) members. &lt;strong&gt;PEOPLE&lt;/strong&gt;. This is why I decided to create this meetup in the first place. Community behind Swift Warsaw is awesome. I would like to thank all the speakers (always looking for new ones!) 👏. There is never too late to learn. So come, join us, share the experience and have fun! We even created an official &lt;a href=&quot;https://sw-slack.herokuapp.com&quot;&gt;Slack group&lt;/a&gt; to make it easier for you.&lt;/p&gt;
+
+&lt;p&gt;So, Swift Warsaw is now bigger than ever. But this is only the beginning. And I hope many more meetups are ahead of us! 🍻&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Swift Warsaw 1 aftermath</title>
@@ -43,80 +58,75 @@ Also available on &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&q
    <content type="html">&lt;p&gt;Swift provides two special type aliases for working with non-specific types:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;AnyObject&lt;/code&gt; can represent an instance of any class type.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Any&lt;/code&gt; can represent an instance of any type at all, apart from function types.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnyObject&lt;/code&gt; can represent an instance of any class type.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Any&lt;/code&gt; can represent an instance of any type at all, apart from function types.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;Let’s assume we have &lt;code&gt;Movie&lt;/code&gt; class…&lt;/p&gt;
+&lt;p&gt;Let’s assume we have &lt;code class=&quot;highlighter-rouge&quot;&gt;Movie&lt;/code&gt; class…&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;swift
-class Movie {
-    let title: String
-    init(_ title: String) {
-        self.title = title;
-    }
-    func simpleDescription() -&amp;gt; String {
-        return &quot;Title: \&quot;\(title)\&quot;.&quot;
-    }
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;There is one interesting thing in the above example – the &lt;code&gt;_&lt;/code&gt; sign:	&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;We can use &lt;code&gt;_&lt;/code&gt; sign when we want to omit providing parameter name in &lt;code&gt;init&lt;/code&gt; method.&lt;/strong&gt; &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;In this case we can create ```Movie``` object like this...
-
-```swift
-Movie(&quot;Forrest Gump&quot;)
-```
-
-...instead of
-
-```swift
-Movie(title: &quot;Forrest Gump&quot;)
-```
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;simpleDescription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Title: &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)\&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;.&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;If we would like to create an array holding &lt;code&gt;Movie&lt;/code&gt; instances and also some other class type instances, we can do it like this:&lt;/p&gt;
+&lt;p&gt;There is one interesting thing in the above example – the &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; sign:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;swift
-var anyObjectThings = [AnyObject]()
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We can use &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; sign when we want to omit providing parameter name in &lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt; method.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In this case we can create &lt;code class=&quot;highlighter-rouge&quot;&gt;Movie&lt;/code&gt; object like this…&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Forrest Gump&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;…instead of&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Forrest Gump&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If we would like to create an array holding &lt;code class=&quot;highlighter-rouge&quot;&gt;Movie&lt;/code&gt; instances and also some other class type instances, we can do it like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;anyObjectThings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;As we want to hold only class instances we don’t have to use [Any] type alias.&lt;/p&gt;
 
-&lt;p&gt;-&lt;/p&gt;
+&lt;p&gt;We than append new &lt;code class=&quot;highlighter-rouge&quot;&gt;Movie&lt;/code&gt; object to the array like this:&lt;/p&gt;
 
-&lt;p&gt;We than append new &lt;code&gt;Movie&lt;/code&gt; object to the array like this: &lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;anyObjectThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Forrest Gump&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-&lt;p&gt;```swift
-anyObjectThings.append(Movie(“Forrest Gump”))&lt;/p&gt;
-
-&lt;p&gt;println((anyObjectThings[0] as Movie).simpleDescription()) 
-// returns “Title: “Forrest Gump”.”
-```&lt;/p&gt;
+&lt;span class=&quot;nf&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;anyObjectThings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;simpleDescription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;// returns &quot;Title: &quot;Forrest Gump&quot;.&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;We use [Any] when we want to support more than just class types, for eg.:&lt;/p&gt;
 
-&lt;p&gt;```swift
-var anyThings = &lt;a href=&quot;&quot;&gt;Any&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;anyThings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]()&lt;/span&gt;
 
-&lt;p&gt;anyThings.append(42)
-anyThings.append(3.14159)
-anyThings.append(“hello”)
-anyThings.append((3.0, 5.0))
-anyThings.append(Movie(“Godzilla”))
-```
-Also see my previous blog post on creating Arrays and Dictionaries with various value types &lt;a href=&quot;/2014/07/21/arrays-and-dicts&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.14159&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Godzilla&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Also see my previous blog post on creating Arrays and Dictionaries with various value types &lt;a href=&quot;/2014/07/21/arrays-and-dicts&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Apple warns to use &lt;code&gt;Any&lt;/code&gt; and &lt;code&gt;AnyObject&lt;/code&gt; only when you explicitly need the behavior and capabilities they provide.&lt;/strong&gt; It is always better to be specific about the types you expect to work with in your code.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple warns to use &lt;code class=&quot;highlighter-rouge&quot;&gt;Any&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;AnyObject&lt;/code&gt; only when you explicitly need the behavior and capabilities they provide.&lt;/strong&gt; It is always better to be specific about the types you expect to work with in your code.&lt;/p&gt;
 
-&lt;p&gt;There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of &lt;code&gt;[AnyObject]&lt;/code&gt;, or “an array of values of any object type”. This is because Objective-C does not have explicitly typed arrays like Swift does.&lt;/p&gt;
+&lt;p&gt;There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of &lt;code class=&quot;highlighter-rouge&quot;&gt;[AnyObject]&lt;/code&gt;, or “an array of values of any object type”. This is because Objective-C does not have explicitly typed arrays like Swift does.&lt;/p&gt;
 </content>
  </entry>
  
@@ -129,11 +139,9 @@ Also see my previous blog post on creating Arrays and Dictionaries with various 
 
 &lt;p&gt;The idea came to my head at &lt;a href=&quot;http://swiftcrunch.com&quot;&gt;#SwiftCrunch&lt;/a&gt; where I met a lot of great devs and wanted the spirit of hackathon to live after the event. I wanted to create a great community. The one that would like to meet regularly and talk all things Swift and more. The one that would benefit from such meetups and level up their and our knowledge about Apple’s “one more thing” for developers this year. I hope that we will accomplish exactly that.&lt;/p&gt;
 
-&lt;center&gt;![Swift Warsaw logo](https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png)
-####Swift Warsaw logo
-&lt;/center&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png&quot; alt=&quot;Swift Warsaw logo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I would like to thank &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt; in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - &lt;a href=&quot;https://narf.pl&quot;&gt;Maciek Konieczny&lt;/a&gt;, &lt;a href=&quot;http://klausa.pl&quot;&gt;Jan Klausa&lt;/a&gt;, &lt;a href=&quot;https://github.com/wczekalski&quot;&gt;Wojtek Czekalski&lt;/a&gt; and &lt;a href=&quot;https://github.com/niczyja&quot;&gt;Maciek Sienkiewicz&lt;/a&gt; for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on &lt;a href=&quot;http://www.meetup.com/Swift-Warsaw/events/195521922/&quot;&gt;Meetup&lt;/a&gt; and &lt;a href=&quot;https://www.facebook.com/events/715788445155070/&quot;&gt;Facebook&lt;/a&gt;). &lt;/p&gt;
+&lt;p&gt;I would like to thank &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt; in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - &lt;a href=&quot;https://narf.pl&quot;&gt;Maciek Konieczny&lt;/a&gt;, &lt;a href=&quot;http://klausa.pl&quot;&gt;Jan Klausa&lt;/a&gt;, &lt;a href=&quot;https://github.com/wczekalski&quot;&gt;Wojtek Czekalski&lt;/a&gt; and &lt;a href=&quot;https://github.com/niczyja&quot;&gt;Maciek Sienkiewicz&lt;/a&gt; for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on &lt;a href=&quot;http://www.meetup.com/Swift-Warsaw/events/195521922/&quot;&gt;Meetup&lt;/a&gt; and &lt;a href=&quot;https://www.facebook.com/events/715788445155070/&quot;&gt;Facebook&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;I would also like to thank &lt;a href=&quot;http://macoscope.com/#dawid&quot;&gt;Dawid Woldu&lt;/a&gt; from Macoscope for helping us out with really neat logo and &lt;a href=&quot;https://twitter.com/_siejkowski&quot;&gt;Krzysztof Siejkowski&lt;/a&gt; for supporting the idea from the start and for working on a first guest presentation for Swift Warsaw :)&lt;/p&gt;
 
@@ -155,11 +163,16 @@ Yours Swiftly,&lt;br /&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;toc&quot;&gt;TOC&lt;/h2&gt;
-&lt;p&gt;### &lt;a href=&quot;#access&quot;&gt;Access Control&lt;/a&gt;
-### &lt;a href=&quot;#by&quot;&gt;.by() -&amp;gt; stride()&lt;/a&gt;
-### &lt;a href=&quot;#unicode&quot;&gt;Unicode String improvements&lt;/a&gt;
-### &lt;a href=&quot;#modifiers&quot;&gt;Revised Declaration Modifiers&lt;/a&gt;
-### &lt;a href=&quot;#landmarks&quot;&gt;Landmarks&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;access-controlaccess&quot;&gt;&lt;a href=&quot;#access&quot;&gt;Access Control&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;by---strideby&quot;&gt;&lt;a href=&quot;#by&quot;&gt;.by() -&amp;gt; stride()&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;unicode-string-improvementsunicode&quot;&gt;&lt;a href=&quot;#unicode&quot;&gt;Unicode String improvements&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;revised-declaration-modifiersmodifiers&quot;&gt;&lt;a href=&quot;#modifiers&quot;&gt;Revised Declaration Modifiers&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;landmarkslandmarks&quot;&gt;&lt;a href=&quot;#landmarks&quot;&gt;Landmarks&lt;/a&gt;&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -169,22 +182,22 @@ Yours Swiftly,&lt;br /&gt;
 &lt;p&gt;Entities can be:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;private&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;Can only be accessed from within the source file where they are defined.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;internal&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;Can be accessed anywhere within the target where they are defined.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;Can be accessed from anywhere within the target and from any other context that imports the current target’s module.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Can only be accessed from within the source file where they are defined.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;internal&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Can be accessed anywhere within the target where they are defined.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;public&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Can be accessed from anywhere within the target and from any other context that imports the current target’s module.&lt;/p&gt;
 
 &lt;h4 id=&quot;things-to-remember&quot;&gt;Things to remember&lt;/h4&gt;
 
@@ -195,50 +208,47 @@ Yours Swiftly,&lt;br /&gt;
   &lt;li&gt;
     &lt;p&gt;Implicitly-synthesized initializers for classes and structs are internal by default&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Generated header&lt;/p&gt;
+  &lt;li&gt;Generated header
     &lt;ul&gt;
       &lt;li&gt;contains only &lt;strong&gt;public&lt;/strong&gt; declarations for &lt;strong&gt;Frameworks&lt;/strong&gt;&lt;/li&gt;
       &lt;li&gt;contains both &lt;strong&gt;public and internal&lt;/strong&gt; declarations for &lt;strong&gt;Applications&lt;/strong&gt;&lt;/li&gt;
     &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;  ```swift
-  // An example class in a framework target.
-  public class ListItem: NSObject {
-      public var text: String
-      public var isComplete: Bool
-      // Readable throughout the module, but only writeable from
-      // within this file.
-      private(set) var UUID: NSUUID
-      public init(text: String, completed: Bool, UUID: NSUUID) {
-          self.text = text
-          self.isComplete = completed
-          self.UUID = UUID
-      }
-      func refreshIdentity() {
-          self.UUID = NSUUID()
-      }
-          // Must be public because it overrides a public method
-      	  // and is itself part of a public type.
-          public override func isEqual(object: AnyObject?) -&amp;gt; Bool {
-              if let item = object as? ListItem {
-                  return self.UUID == item.UUID
-          }
-          return false
-      }
-  }
-  ```
+    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// An example class in a framework target.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ListItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;isComplete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Readable throughout the module, but only writeable from&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// within this file.&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private(set)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;UUID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSUUID&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UUID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSUUID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isComplete&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completed&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UUID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UUID&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;refreshIdentity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UUID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSUUID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Must be public because it overrides a public method&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// and is itself part of a public type.&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ListItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UUID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UUID&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;If you need a private method or property to be callable from Objective-C, you have to add
-the &lt;code&gt;@objc&lt;/code&gt; attribute to the declaration explicitly.&lt;/li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;If you need a private method or property to be callable from Objective-C, you have to add
+the &lt;code class=&quot;highlighter-rouge&quot;&gt;@objc&lt;/code&gt; attribute to the declaration explicitly.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;limitations&quot;&gt;Limitations&lt;/h4&gt;
@@ -255,60 +265,61 @@ the &lt;code&gt;@objc&lt;/code&gt; attribute to the declaration explicitly.&lt;/
 
 &lt;h4 id=&quot;usage&quot;&gt;Usage&lt;/h4&gt;
 &lt;ul&gt;
-  &lt;li&gt;for &lt;strong&gt;exlusive&lt;/strong&gt; ranges:&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;for &lt;strong&gt;exlusive&lt;/strong&gt; ranges:&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stride(from: to: by:)&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;for &lt;strong&gt;inclusive&lt;/strong&gt; ranges:&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stride(from: through: by:)&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;stride(from: to: by:)&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;for &lt;strong&gt;inclusive&lt;/strong&gt; ranges:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;stride(from: through: by:)&lt;/code&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;examples&quot;&gt;Examples&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;swift
-stride(from: x, to: y, by: z)           //was: (x..&amp;lt;y).by(z)
-stride(from: x, through: y, by: z)      //was: (x...y).by(z)
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;//was: (x..&amp;lt;y).by(z)&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;through&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;//was: (x...y).by(z)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;a-idunicodeaunicode-string-improvements&quot;&gt;&lt;a id=&quot;unicode&quot;&gt;&lt;/a&gt;Unicode String improvements&lt;/h2&gt;
-&lt;p&gt;The &lt;code&gt;String&lt;/code&gt; type now implements a grapheme cluster segmentation algorithm to
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; type now implements a grapheme cluster segmentation algorithm to
 produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;swift
-// returns 15
-countElements(&quot;a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”)
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// returns 15&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;countElements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;a&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u{1F30D}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;cafe&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u{0301}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;umbrella&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u{FE0E}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u{1F1E9}\u{1F1EA}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;A &lt;code&gt;for-in&lt;/code&gt; loop over the string produces each human visible character in sequence.&lt;/p&gt;
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;for-in&lt;/code&gt; loop over the string produces each human visible character in sequence.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;a-idmodifiersarevised-declaration-modifiers&quot;&gt;&lt;a id=&quot;modifiers&quot;&gt;&lt;/a&gt;Revised Declaration Modifiers&lt;/h2&gt;
-&lt;p&gt;The &lt;code&gt;@final&lt;/code&gt;, &lt;code&gt;@lazy&lt;/code&gt;, &lt;code&gt;@optional&lt;/code&gt;, and &lt;code&gt;@required&lt;/code&gt; attributes have been converted to declaration modifiers, specified without an &lt;code&gt;@&lt;/code&gt; sign.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;@final&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;@lazy&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;@optional&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;@required&lt;/code&gt; attributes have been converted to declaration modifiers, specified without an &lt;code class=&quot;highlighter-rouge&quot;&gt;@&lt;/code&gt; sign.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;@final&lt;/code&gt; -&amp;gt; &lt;code&gt;final&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@final&lt;/code&gt; -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;final&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;@lazy&lt;/code&gt; -&amp;gt; &lt;code&gt;lazy&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@lazy&lt;/code&gt; -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;lazy&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;@optional&lt;/code&gt; -&amp;gt; &lt;code&gt;optional&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@optional&lt;/code&gt; -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;optional&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;@required&lt;/code&gt; -&amp;gt; &lt;code&gt;required&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@required&lt;/code&gt; -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;required&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;a-idlandmarksalandmarks&quot;&gt;&lt;a id=&quot;landmarks&quot;&gt;&lt;/a&gt;Landmarks&lt;/h2&gt;
-&lt;p&gt;Finally! Xcode now supports &lt;code&gt;//MARK:&lt;/code&gt;, &lt;code&gt;//TODO:&lt;/code&gt; and &lt;code&gt;//FIXME&lt;/code&gt; landmarks to annotate your code and
+&lt;p&gt;Finally! Xcode now supports &lt;code class=&quot;highlighter-rouge&quot;&gt;//MARK:&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;//TODO:&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;//FIXME&lt;/code&gt; landmarks to annotate your code and
 lists them in the jump bar.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -319,24 +330,24 @@ lists them in the jump bar.&lt;/p&gt;
  
  <entry>
    <title>Arrays and Dictionaries with various value types in Swift</title>
-   <link href="http://kuczborski.com/2014/07/21/arrays-and-dicts/"/>
+   <link href="http://kuczborski.com/2014/07/21/arrays-and-dicts.1/"/>
    <updated>2014-07-21T00:00:00+02:00</updated>
-   <id>http://kuczborski.com/2014/07/21/arrays-and-dicts</id>
+   <id>http://kuczborski.com/2014/07/21/arrays-and-dicts.1</id>
    <content type="html">&lt;p&gt;Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries.&lt;/p&gt;
 
 &lt;p&gt;Here is how you can now create an Array with different value types:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;swift
-/* Create an Array with different value types */
-var arr: [Any] = [&quot;aString&quot;, 1.23, true]
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Create an Array with different value types */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;aString&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;And here is the same for Dictionary:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;swift
-/* Create a Dictionary with different value types */
-var dict: [String:Any] = [&quot;key1&quot;:&quot;aString&quot;, &quot;key2&quot;:1.23, &quot;key3&quot;:true]
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Create a Dictionary with different value types */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;key1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;aString&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;key2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;key3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </content>
  </entry>
  

@@ -10,10 +10,15 @@ Xcode 6 Beta 4 brought some important changes related to constantly evolving Swi
 <!--more-->
 
 ## TOC
+
 ### [Access Control](#access)
+
 ### [.by() -> stride()](#by)
+
 ### [Unicode String improvements](#unicode)
+
 ### [Revised Declaration Modifiers](#modifiers)
+
 ### [Landmarks](#landmarks)
 
 ---
@@ -46,32 +51,32 @@ Entities can be:
   - contains only **public** declarations for **Frameworks**
   - contains both **public and internal** declarations for **Applications**
 
-      ```swift
-      // An example class in a framework target.
-      public class ListItem: NSObject {
-          public var text: String
-          public var isComplete: Bool
-          // Readable throughout the module, but only writeable from
-          // within this file.
-          private(set) var UUID: NSUUID
-          public init(text: String, completed: Bool, UUID: NSUUID) {
-              self.text = text
-              self.isComplete = completed
-              self.UUID = UUID
-          }
-          func refreshIdentity() {
-              self.UUID = NSUUID()
-          }
-              // Must be public because it overrides a public method
-          	  // and is itself part of a public type.
-              public override func isEqual(object: AnyObject?) -> Bool {
-                  if let item = object as? ListItem {
-                      return self.UUID == item.UUID
-              }
-              return false
-          }
+  ```swift
+  // An example class in a framework target.
+  public class ListItem: NSObject {
+      public var text: String
+      public var isComplete: Bool
+      // Readable throughout the module, but only writeable from
+      // within this file.
+      private(set) var UUID: NSUUID
+      public init(text: String, completed: Bool, UUID: NSUUID) {
+          self.text = text
+          self.isComplete = completed
+          self.UUID = UUID
       }
-      ```
+      func refreshIdentity() {
+          self.UUID = NSUUID()
+      }
+          // Must be public because it overrides a public method
+          // and is itself part of a public type.
+          public override func isEqual(object: AnyObject?) -> Bool {
+              if let item = object as? ListItem {
+                  return self.UUID == item.UUID
+          }
+          return false
+      }
+  }
+  ```
 
 - Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.
 

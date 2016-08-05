@@ -9,9 +9,7 @@ comments: true
 
 The idea came to my head at [#SwiftCrunch](http://swiftcrunch.com) where I met a lot of great devs and wanted the spirit of hackathon to live after the event. I wanted to create a great community. The one that would like to meet regularly and talk all things Swift and more. The one that would benefit from such meetups and level up their and our knowledge about Apple's "one more thing" for developers this year. I hope that we will accomplish exactly that.
 
-<center>![Swift Warsaw logo](https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png)
-####Swift Warsaw logo
-</center>
+![Swift Warsaw logo](https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png)
 
 I would like to thank [Macoscope](http://macoscope.com) in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - [Maciek Konieczny](https://narf.pl), [Jan Klausa](http://klausa.pl), [Wojtek Czekalski](https://github.com/wczekalski) and [Maciek Sienkiewicz](https://github.com/niczyja) for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on [Meetup](http://www.meetup.com/Swift-Warsaw/events/195521922/) and [Facebook](https://www.facebook.com/events/715788445155070/)). 
 

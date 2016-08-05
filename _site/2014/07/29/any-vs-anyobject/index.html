@@ -41,11 +41,6 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Highlight.js -->
-  <link rel="stylesheet" href="/public/highlight/styles/solarized_dark.css">
-  <script src="/public/highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
 </head>
 
 
@@ -85,11 +80,15 @@
           
         
       
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/lkuczborski" target="_blank">GitHub</a>
     </nav>
 
-    <p>&copy; 2014. All rights reserved.</p>
+    <p>&copy; 2016. All rights reserved.</p>
   </div>
 </div>
 
@@ -101,80 +100,75 @@
   <p>Swift provides two special type aliases for working with non-specific types:</p>
 
 <ul>
-  <li><code>AnyObject</code> can represent an instance of any class type.</li>
-  <li><code>Any</code> can represent an instance of any type at all, apart from function types.</li>
+  <li><code class="highlighter-rouge">AnyObject</code> can represent an instance of any class type.</li>
+  <li><code class="highlighter-rouge">Any</code> can represent an instance of any type at all, apart from function types.</li>
 </ul>
 
 <!--more-->
 
-<p>Let’s assume we have <code>Movie</code> class…</p>
+<p>Let’s assume we have <code class="highlighter-rouge">Movie</code> class…</p>
 
-<p><code>swift
-class Movie {
-    let title: String
-    init(_ title: String) {
-        self.title = title;
-    }
-    func simpleDescription() -&gt; String {
-        return "Title: \"\(title)\"."
-    }
-}
-</code></p>
-
-<p>There is one interesting thing in the above example – the <code>_</code> sign:	</p>
-
-<ul>
-  <li><strong>We can use <code>_</code> sign when we want to omit providing parameter name in <code>init</code> method.</strong> </li>
-</ul>
-
-<pre><code>In this case we can create ```Movie``` object like this...
-
-```swift
-Movie("Forrest Gump")
-```
-
-...instead of
-
-```swift
-Movie(title: "Forrest Gump")
-```
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">Movie</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"Title: </span><span class="se">\"\(</span><span class="n">title</span><span class="se">)\"</span><span class="s">."</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<p>If we would like to create an array holding <code>Movie</code> instances and also some other class type instances, we can do it like this:</p>
+<p>There is one interesting thing in the above example – the <code class="highlighter-rouge">_</code> sign:</p>
 
-<p><code>swift
-var anyObjectThings = [AnyObject]()
-</code></p>
+<p><strong>We can use <code class="highlighter-rouge">_</code> sign when we want to omit providing parameter name in <code class="highlighter-rouge">init</code> method.</strong></p>
+
+<p>In this case we can create <code class="highlighter-rouge">Movie</code> object like this…</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">Movie</span><span class="p">(</span><span class="s">"Forrest Gump"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>…instead of</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">Movie</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Forrest Gump"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>If we would like to create an array holding <code class="highlighter-rouge">Movie</code> instances and also some other class type instances, we can do it like this:</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">anyObjectThings</span> <span class="o">=</span> <span class="p">[</span><span class="kt">AnyObject</span><span class="p">]()</span>
+</code></pre>
+</div>
 
 <p>As we want to hold only class instances we don’t have to use [Any] type alias.</p>
 
-<p>-</p>
+<p>We than append new <code class="highlighter-rouge">Movie</code> object to the array like this:</p>
 
-<p>We than append new <code>Movie</code> object to the array like this: </p>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">anyObjectThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Movie</span><span class="p">(</span><span class="s">"Forrest Gump"</span><span class="p">))</span>
 
-<p>```swift
-anyObjectThings.append(Movie(“Forrest Gump”))</p>
-
-<p>println((anyObjectThings[0] as Movie).simpleDescription()) 
-// returns “Title: “Forrest Gump”.”
-```</p>
+<span class="nf">println</span><span class="p">((</span><span class="n">anyObjectThings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">as</span> <span class="kt">Movie</span><span class="p">)</span><span class="o">.</span><span class="nf">simpleDescription</span><span class="p">())</span> 
+<span class="c1">// returns "Title: "Forrest Gump"."</span>
+</code></pre>
+</div>
 
 <p>We use [Any] when we want to support more than just class types, for eg.:</p>
 
-<p>```swift
-var anyThings = <a href="">Any</a></p>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">anyThings</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]()</span>
 
-<p>anyThings.append(42)
-anyThings.append(3.14159)
-anyThings.append(“hello”)
-anyThings.append((3.0, 5.0))
-anyThings.append(Movie(“Godzilla”))
-```
-Also see my previous blog post on creating Arrays and Dictionaries with various value types <a href="/2014/07/21/arrays-and-dicts">here</a>.</p>
+<span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">)</span>
+<span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>
+<span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">((</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">))</span>
+<span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Movie</span><span class="p">(</span><span class="s">"Godzilla"</span><span class="p">))</span>
+</code></pre>
+</div>
+<p>Also see my previous blog post on creating Arrays and Dictionaries with various value types <a href="/2014/07/21/arrays-and-dicts">here</a>.</p>
 
-<p><strong>Apple warns to use <code>Any</code> and <code>AnyObject</code> only when you explicitly need the behavior and capabilities they provide.</strong> It is always better to be specific about the types you expect to work with in your code.</p>
+<p><strong>Apple warns to use <code class="highlighter-rouge">Any</code> and <code class="highlighter-rouge">AnyObject</code> only when you explicitly need the behavior and capabilities they provide.</strong> It is always better to be specific about the types you expect to work with in your code.</p>
 
-<p>There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of <code>[AnyObject]</code>, or “an array of values of any object type”. This is because Objective-C does not have explicitly typed arrays like Swift does.</p>
+<p>There are however cases when you will have to use this type aliases for eg. when working with Cocoa APIs, it is common to receive an array with a type of <code class="highlighter-rouge">[AnyObject]</code>, or “an array of values of any object type”. This is because Objective-C does not have explicitly typed arrays like Swift does.</p>
 
 </div>
 
@@ -202,6 +196,15 @@ Also see my previous blog post on creating Arrays and Dictionaries with various 
     
       <li>
         <h3>
+          <a href="/2016/08/05/two-years-of-swift-warsaw/">
+            Two years of Swift Warsaw 🎉
+            <small>05 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2014/08/01/swift-warsaw-1/">
             Swift Warsaw 1 aftermath
             <small>01 Aug 2014</small>
@@ -214,15 +217,6 @@ Also see my previous blog post on creating Arrays and Dictionaries with various 
           <a href="/2014/07/25/introducing-swift-warsaw/">
             Introducing Swift Warsaw
             <small>25 Jul 2014</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2014/07/22/changes-in-xcode-6-beta-4/">
-            Changes in Xcode 6 Beta 4
-            <small>22 Jul 2014</small>
           </a>
         </h3>
       </li>

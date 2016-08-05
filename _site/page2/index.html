@@ -12,14 +12,10 @@
   <meta name="twitter:site" content="@lkuczborski">
 
   
-    <meta name="twitter:title" content="404: Page not found">
+    <meta name="twitter:title" content="Yours Swiftly">
   
   
-    <meta name="twitter:description" content="
-  404: Page not found
-  Sorry, we&#39;ve misplaced that URL or it&#39;s pointing to something that doesn&#39;t exist. Head back home to try finding it again.
-
-">
+    <meta name="twitter:description" content="© Łukasz Kuczborski">
   
 
 
@@ -28,7 +24,7 @@
 
   <title>
     
-      404: Page not found &middot; Yours Swiftly
+      Yours Swiftly &middot; by Łukasz Kuczborski
     
   </title>
 
@@ -98,9 +94,49 @@
 
 
     <div class="content container">
-      <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="/">Head back home</a> to try finding it again.</p>
+      <div class="posts">
+  
+  <div class="">
+    <h1 class="post-title">
+      <a href="/2014/07/21/arrays-and-dicts.1/">
+        Arrays and Dictionaries with various value types in Swift
+      </a>
+    </h1>
+
+    <span class="post-date">21 Jul 2014</span>
+
+    <p>Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries.</p>
+
+<p>Here is how you can now create an Array with different value types:</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="cm">/* Create an Array with different value types */</span>
+<span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"aString"</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span> <span class="kc">true</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<p>And here is the same for Dictionary:</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="cm">/* Create a Dictionary with different value types */</span>
+<span class="k">var</span> <span class="nv">dict</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"key1"</span><span class="p">:</span><span class="s">"aString"</span><span class="p">,</span> <span class="s">"key2"</span><span class="p">:</span><span class="mf">1.23</span><span class="p">,</span> <span class="s">"key3"</span><span class="p">:</span><span class="kc">true</span><span class="p">]</span>
+</code></pre>
+</div>
+
+    
+
+    
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    
+      <a class="pagination-item newer" href="/">Newer</a>
+    
+  
 </div>
 
     </div>

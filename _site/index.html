@@ -41,11 +41,6 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Highlight.js -->
-  <link rel="stylesheet" href="/public/highlight/styles/solarized_dark.css">
-  <script src="/public/highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
 </head>
 
 
@@ -85,17 +80,45 @@
           
         
       
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/lkuczborski" target="_blank">GitHub</a>
     </nav>
 
-    <p>&copy; 2014. All rights reserved.</p>
+    <p>&copy; 2016. All rights reserved.</p>
   </div>
 </div>
 
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="">
+    <h1 class="post-title">
+      <a href="/2016/08/05/two-years-of-swift-warsaw/">
+        Two years of Swift Warsaw 🎉
+      </a>
+    </h1>
+
+    <span class="post-date">05 Aug 2016</span>
+
+    <p>It’s been two years since our first meetup. A lot of things happend in the meantime. We have a new place for our meetups (Thanks <a href="https://www.syncano.io">Syncano</a>!), new sponsors (<a href="https://www.syncano.io">Syncano</a>, <a href="http://10clouds.com">10clouds</a>, <a href="http://macoscope.com">Macoscope</a>), we changed our logo. But what is most important is that we grew. A lot.</p>
+
+<center><img src="http://photos4.meetupstatic.com/photos/event/8/d/4/9/global_446316169.jpeg" /></center>
+
+<p><a href="http://www.meetup.com/Swift-Warsaw/">Swift Warsaw</a> has now over 400(!) members. <strong>PEOPLE</strong>. This is why I decided to create this meetup in the first place. Community behind Swift Warsaw is awesome. I would like to thank all the speakers (always looking for new ones!) 👏. There is never too late to learn. So come, join us, share the experience and have fun! We even created an official <a href="https://sw-slack.herokuapp.com">Slack group</a> to make it easier for you.</p>
+
+<p>So, Swift Warsaw is now bigger than ever. But this is only the beginning. And I hope many more meetups are ahead of us! 🍻</p>
+
+    
+
+    
+      <hr />
+    
+  </div>
   
   <div class="">
     <h1 class="post-title">
@@ -132,8 +155,8 @@
     <p>Swift provides two special type aliases for working with non-specific types:</p>
 
 <ul>
-  <li><code>AnyObject</code> can represent an instance of any class type.</li>
-  <li><code>Any</code> can represent an instance of any type at all, apart from function types.</li>
+  <li><code class="highlighter-rouge">AnyObject</code> can represent an instance of any class type.</li>
+  <li><code class="highlighter-rouge">Any</code> can represent an instance of any type at all, apart from function types.</li>
 </ul>
 
 
@@ -159,11 +182,9 @@
 
 <p>The idea came to my head at <a href="http://swiftcrunch.com">#SwiftCrunch</a> where I met a lot of great devs and wanted the spirit of hackathon to live after the event. I wanted to create a great community. The one that would like to meet regularly and talk all things Swift and more. The one that would benefit from such meetups and level up their and our knowledge about Apple’s “one more thing” for developers this year. I hope that we will accomplish exactly that.</p>
 
-<center>![Swift Warsaw logo](https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png)
-####Swift Warsaw logo
-</center>
+<p><img src="https://raw.githubusercontent.com/SwiftWarsaw/SwiftWarsaw/master/logo/swift_warsaw_logo_200.png" alt="Swift Warsaw logo" /></p>
 
-<p>I would like to thank <a href="http://macoscope.com">Macoscope</a> in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - <a href="https://narf.pl">Maciek Konieczny</a>, <a href="http://klausa.pl">Jan Klausa</a>, <a href="https://github.com/wczekalski">Wojtek Czekalski</a> and <a href="https://github.com/niczyja">Maciek Sienkiewicz</a> for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on <a href="http://www.meetup.com/Swift-Warsaw/events/195521922/">Meetup</a> and <a href="https://www.facebook.com/events/715788445155070/">Facebook</a>). </p>
+<p>I would like to thank <a href="http://macoscope.com">Macoscope</a> in the first place, for being so kind to host the event and even sponsor it! And then of course my fellow friends working there aka Organizers Team - <a href="https://narf.pl">Maciek Konieczny</a>, <a href="http://klausa.pl">Jan Klausa</a>, <a href="https://github.com/wczekalski">Wojtek Czekalski</a> and <a href="https://github.com/niczyja">Maciek Sienkiewicz</a> for helping me organize the whole thing (first meetup is coming this week, on 31st of July! - events available on <a href="http://www.meetup.com/Swift-Warsaw/events/195521922/">Meetup</a> and <a href="https://www.facebook.com/events/715788445155070/">Facebook</a>).</p>
 
 <p>I would also like to thank <a href="http://macoscope.com/#dawid">Dawid Woldu</a> from Macoscope for helping us out with really neat logo and <a href="https://twitter.com/_siejkowski">Krzysztof Siejkowski</a> for supporting the idea from the start and for working on a first guest presentation for Swift Warsaw :)</p>
 
@@ -172,7 +193,6 @@
 <p><br />
 Yours Swiftly,<br />
 Łukasz</p>
-
 
     
 
@@ -202,42 +222,11 @@ Yours Swiftly,<br />
     
   </div>
   
-  <div class="">
-    <h1 class="post-title">
-      <a href="/2014/07/21/arrays-and-dicts/">
-        Arrays and Dictionaries with various value types in Swift
-      </a>
-    </h1>
-
-    <span class="post-date">21 Jul 2014</span>
-
-    <p>Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries.</p>
-
-<p>Here is how you can now create an Array with different value types:</p>
-
-<p><code>swift
-/* Create an Array with different value types */
-var arr: [Any] = ["aString", 1.23, true]
-</code></p>
-
-<p>And here is the same for Dictionary:</p>
-
-<p><code>swift
-/* Create a Dictionary with different value types */
-var dict: [String:Any] = ["key1":"aString", "key2":1.23, "key3":true]
-</code></p>
-
-
-    
-
-    
-  </div>
-  
 </div>
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/page2">Older</a>
   
   
     <span class="pagination-item newer">Newer</span>

@@ -41,11 +41,6 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Highlight.js -->
-  <link rel="stylesheet" href="/public/highlight/styles/solarized_dark.css">
-  <script src="/public/highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
 </head>
 
 
@@ -85,11 +80,15 @@
           
         
       
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/lkuczborski" target="_blank">GitHub</a>
     </nav>
 
-    <p>&copy; 2014. All rights reserved.</p>
+    <p>&copy; 2016. All rights reserved.</p>
   </div>
 </div>
 
@@ -103,11 +102,16 @@
 <!--more-->
 
 <h2 id="toc">TOC</h2>
-<p>### <a href="#access">Access Control</a>
-### <a href="#by">.by() -&gt; stride()</a>
-### <a href="#unicode">Unicode String improvements</a>
-### <a href="#modifiers">Revised Declaration Modifiers</a>
-### <a href="#landmarks">Landmarks</a></p>
+
+<h3 id="access-controlaccess"><a href="#access">Access Control</a></h3>
+
+<h3 id="by---strideby"><a href="#by">.by() -&gt; stride()</a></h3>
+
+<h3 id="unicode-string-improvementsunicode"><a href="#unicode">Unicode String improvements</a></h3>
+
+<h3 id="revised-declaration-modifiersmodifiers"><a href="#modifiers">Revised Declaration Modifiers</a></h3>
+
+<h3 id="landmarkslandmarks"><a href="#landmarks">Landmarks</a></h3>
 
 <hr />
 
@@ -117,22 +121,22 @@
 <p>Entities can be:</p>
 
 <ul>
-  <li><code>private</code></li>
+  <li>
+    <p><code class="highlighter-rouge">private</code></p>
+
+    <p>Can only be accessed from within the source file where they are defined.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">internal</code></p>
+
+    <p>Can be accessed anywhere within the target where they are defined.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">public</code></p>
+
+    <p>Can be accessed from anywhere within the target and from any other context that imports the current target’s module.</p>
+  </li>
 </ul>
-
-<p>Can only be accessed from within the source file where they are defined.</p>
-
-<ul>
-  <li><code>internal</code></li>
-</ul>
-
-<p>Can be accessed anywhere within the target where they are defined.</p>
-
-<ul>
-  <li><code>public</code></li>
-</ul>
-
-<p>Can be accessed from anywhere within the target and from any other context that imports the current target’s module.</p>
 
 <h4 id="things-to-remember">Things to remember</h4>
 
@@ -143,50 +147,47 @@
   <li>
     <p>Implicitly-synthesized initializers for classes and structs are internal by default</p>
   </li>
-  <li>
-    <p>Generated header</p>
+  <li>Generated header
     <ul>
       <li>contains only <strong>public</strong> declarations for <strong>Frameworks</strong></li>
       <li>contains both <strong>public and internal</strong> declarations for <strong>Applications</strong></li>
     </ul>
-  </li>
-</ul>
 
-<pre><code>  ```swift
-  // An example class in a framework target.
-  public class ListItem: NSObject {
-      public var text: String
-      public var isComplete: Bool
-      // Readable throughout the module, but only writeable from
-      // within this file.
-      private(set) var UUID: NSUUID
-      public init(text: String, completed: Bool, UUID: NSUUID) {
-          self.text = text
-          self.isComplete = completed
-          self.UUID = UUID
-      }
-      func refreshIdentity() {
-          self.UUID = NSUUID()
-      }
-          // Must be public because it overrides a public method
-      	  // and is itself part of a public type.
-          public override func isEqual(object: AnyObject?) -&gt; Bool {
-              if let item = object as? ListItem {
-                  return self.UUID == item.UUID
-          }
-          return false
-      }
-  }
-  ```
+    <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// An example class in a framework target.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">ListItem</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">isComplete</span><span class="p">:</span> <span class="kt">Bool</span>
+    <span class="c1">// Readable throughout the module, but only writeable from</span>
+    <span class="c1">// within this file.</span>
+    <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">UUID</span><span class="p">:</span> <span class="kt">NSUUID</span>
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completed</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="kt">UUID</span><span class="p">:</span> <span class="kt">NSUUID</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">isComplete</span> <span class="o">=</span> <span class="n">completed</span>
+        <span class="k">self</span><span class="o">.</span><span class="kt">UUID</span> <span class="o">=</span> <span class="kt">UUID</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">refreshIdentity</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="kt">UUID</span> <span class="o">=</span> <span class="kt">NSUUID</span><span class="p">()</span>
+    <span class="p">}</span>
+        <span class="c1">// Must be public because it overrides a public method</span>
+        <span class="c1">// and is itself part of a public type.</span>
+        <span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">isEqual</span><span class="p">(</span><span class="nv">object</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">item</span> <span class="o">=</span> <span class="n">object</span> <span class="k">as?</span> <span class="kt">ListItem</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="kt">UUID</span> <span class="o">==</span> <span class="n">item</span><span class="o">.</span><span class="kt">UUID</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.</p>
 
-<ul>
-  <li>Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.</li>
-</ul>
-
-<ul>
-  <li>If you need a private method or property to be callable from Objective-C, you have to add
-the <code>@objc</code> attribute to the declaration explicitly.</li>
+    <ul>
+      <li>If you need a private method or property to be callable from Objective-C, you have to add
+the <code class="highlighter-rouge">@objc</code> attribute to the declaration explicitly.</li>
+    </ul>
+  </li>
 </ul>
 
 <h4 id="limitations">Limitations</h4>
@@ -203,60 +204,61 @@ the <code>@objc</code> attribute to the declaration explicitly.</li>
 
 <h4 id="usage">Usage</h4>
 <ul>
-  <li>for <strong>exlusive</strong> ranges:</li>
+  <li>
+    <p>for <strong>exlusive</strong> ranges:</p>
+
+    <p><code class="highlighter-rouge">stride(from: to: by:)</code></p>
+  </li>
+  <li>
+    <p>for <strong>inclusive</strong> ranges:</p>
+
+    <p><code class="highlighter-rouge">stride(from: through: by:)</code></p>
+  </li>
 </ul>
-
-<p><code>stride(from: to: by:)</code></p>
-
-<ul>
-  <li>for <strong>inclusive</strong> ranges:</li>
-</ul>
-
-<p><code>stride(from: through: by:)</code></p>
 
 <h4 id="examples">Examples</h4>
-<p><code>swift
-stride(from: x, to: y, by: z)           //was: (x..&lt;y).by(z)
-stride(from: x, through: y, by: z)      //was: (x...y).by(z)
-</code></p>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="n">z</span><span class="p">)</span>           <span class="c1">//was: (x..&lt;y).by(z)</span>
+<span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="n">z</span><span class="p">)</span>      <span class="c1">//was: (x...y).by(z)</span>
+</code></pre>
+</div>
 
 <hr />
 
 <h2 id="a-idunicodeaunicode-string-improvements"><a id="unicode"></a>Unicode String improvements</h2>
-<p>The <code>String</code> type now implements a grapheme cluster segmentation algorithm to
+<p>The <code class="highlighter-rouge">String</code> type now implements a grapheme cluster segmentation algorithm to
 produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.</p>
 
-<p><code>swift
-// returns 15
-countElements("a\u{1F30D}cafe\u{0301}umbrella\u{FE0E} \u{1F1E9}\u{1F1EA}”)
-</code></p>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// returns 15</span>
+<span class="nf">countElements</span><span class="p">(</span><span class="s">"a</span><span class="se">\u{1F30D}</span><span class="s">cafe</span><span class="se">\u{0301}</span><span class="s">umbrella</span><span class="se">\u{FE0E}</span><span class="s"> </span><span class="se">\u{1F1E9}\u{1F1EA}</span><span class="s">”)
+</span></code></pre>
+</div>
 
-<p>A <code>for-in</code> loop over the string produces each human visible character in sequence.</p>
+<p>A <code class="highlighter-rouge">for-in</code> loop over the string produces each human visible character in sequence.</p>
 
 <hr />
 
 <h2 id="a-idmodifiersarevised-declaration-modifiers"><a id="modifiers"></a>Revised Declaration Modifiers</h2>
-<p>The <code>@final</code>, <code>@lazy</code>, <code>@optional</code>, and <code>@required</code> attributes have been converted to declaration modifiers, specified without an <code>@</code> sign.</p>
+<p>The <code class="highlighter-rouge">@final</code>, <code class="highlighter-rouge">@lazy</code>, <code class="highlighter-rouge">@optional</code>, and <code class="highlighter-rouge">@required</code> attributes have been converted to declaration modifiers, specified without an <code class="highlighter-rouge">@</code> sign.</p>
 
 <ul>
   <li>
-    <p><code>@final</code> -&gt; <code>final</code></p>
+    <p><code class="highlighter-rouge">@final</code> -&gt; <code class="highlighter-rouge">final</code></p>
   </li>
   <li>
-    <p><code>@lazy</code> -&gt; <code>lazy</code></p>
+    <p><code class="highlighter-rouge">@lazy</code> -&gt; <code class="highlighter-rouge">lazy</code></p>
   </li>
   <li>
-    <p><code>@optional</code> -&gt; <code>optional</code></p>
+    <p><code class="highlighter-rouge">@optional</code> -&gt; <code class="highlighter-rouge">optional</code></p>
   </li>
   <li>
-    <p><code>@required</code> -&gt; <code>required</code></p>
+    <p><code class="highlighter-rouge">@required</code> -&gt; <code class="highlighter-rouge">required</code></p>
   </li>
 </ul>
 
 <hr />
 
 <h2 id="a-idlandmarksalandmarks"><a id="landmarks"></a>Landmarks</h2>
-<p>Finally! Xcode now supports <code>//MARK:</code>, <code>//TODO:</code> and <code>//FIXME</code> landmarks to annotate your code and
+<p>Finally! Xcode now supports <code class="highlighter-rouge">//MARK:</code>, <code class="highlighter-rouge">//TODO:</code> and <code class="highlighter-rouge">//FIXME</code> landmarks to annotate your code and
 lists them in the jump bar.</p>
 
 <hr />
@@ -289,6 +291,15 @@ lists them in the jump bar.</p>
     
       <li>
         <h3>
+          <a href="/2016/08/05/two-years-of-swift-warsaw/">
+            Two years of Swift Warsaw 🎉
+            <small>05 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2014/08/01/swift-warsaw-1/">
             Swift Warsaw 1 aftermath
             <small>01 Aug 2014</small>
@@ -301,15 +312,6 @@ lists them in the jump bar.</p>
           <a href="/2014/07/29/any-vs-anyobject/">
             Any vs. AnyObject
             <small>29 Jul 2014</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2014/07/25/introducing-swift-warsaw/">
-            Introducing Swift Warsaw
-            <small>25 Jul 2014</small>
           </a>
         </h3>
       </li>

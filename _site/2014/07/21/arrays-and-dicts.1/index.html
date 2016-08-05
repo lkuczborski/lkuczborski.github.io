@@ -12,10 +12,10 @@
   <meta name="twitter:site" content="@lkuczborski">
 
   
-    <meta name="twitter:title" content="Swift Warsaw 1 aftermath">
+    <meta name="twitter:title" content="Arrays and Dictionaries with various value types in Swift">
   
   
-    <meta name="twitter:description" content="Swift Warsaw">
+    <meta name="twitter:description" content="Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries. Here is how you can now create an Array with different value types...">
   
 
 
@@ -24,7 +24,7 @@
 
   <title>
     
-      Swift Warsaw 1 aftermath &middot; Yours Swiftly
+      Arrays and Dictionaries with various value types in Swift &middot; Yours Swiftly
     
   </title>
 
@@ -95,23 +95,23 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Swift Warsaw 1 aftermath</h1>
-  <span class="post-date">01 Aug 2014</span>
-  <p>So we met yesterday at <a href="http://macoscope.com">Macoscope</a> HQ for <strong>Swift Warsaw #1</strong> event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further, see you at our next meetup (TBA soon)! 💬🍺👍</p>
+  <h1 class="post-title">Arrays and Dictionaries with various value types in Swift</h1>
+  <span class="post-date">21 Jul 2014</span>
+  <p>Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries.</p>
 
-<p>In the meantime here are the slides from yesterday’s talks:</p>
+<p>Here is how you can now create an Array with different value types:</p>
 
-<!--more-->
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="cm">/* Create an Array with different value types */</span>
+<span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"aString"</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span> <span class="kc">true</span><span class="p">]</span>
+</code></pre>
+</div>
 
-<p>“Swiftroduction - An Introduction to Swift” by Łukasz Kuczborski:
-<script async="" class="speakerdeck-embed" data-id="b0f33f70f9fd01311408323d6ac6076c" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>And here is the same for Dictionary:</p>
 
-<p>“Swift In Flux” by Jan Klausa:
-<script async="" class="speakerdeck-embed" data-id="da064680fb0c0131d88c6a0d18b48761" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-Also available on <a href="https://github.com/jklausa/swiftinflux-talk">GitHub</a>.</p>
-
-<p>The last presentation, “Swift DSL Toolbelt” by Krzysztof Siejkowski, was created entirely using brilliant <a href="https://github.com/jas/swift-playground-builder">swift-playground-builder</a> by <a href="https://github.com/jas">Jason Sandmayer</a> and is  available on <a href="https://github.com/siejkowski/swift-dsl-toolbelt">GitHub</a>.</p>
-
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="cm">/* Create a Dictionary with different value types */</span>
+<span class="k">var</span> <span class="nv">dict</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"key1"</span><span class="p">:</span><span class="s">"aString"</span><span class="p">,</span> <span class="s">"key2"</span><span class="p">:</span><span class="mf">1.23</span><span class="p">,</span> <span class="s">"key3"</span><span class="p">:</span><span class="kc">true</span><span class="p">]</span>
+</code></pre>
+</div>
 
 </div>
 
@@ -148,18 +148,18 @@ Also available on <a href="https://github.com/jklausa/swiftinflux-talk">GitHub</
     
       <li>
         <h3>
-          <a href="/2014/07/29/any-vs-anyobject/">
-            Any vs. AnyObject
-            <small>29 Jul 2014</small>
+          <a href="/2014/08/01/swift-warsaw-1/">
+            Swift Warsaw 1 aftermath
+            <small>01 Aug 2014</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/2014/07/25/introducing-swift-warsaw/">
-            Introducing Swift Warsaw
-            <small>25 Jul 2014</small>
+          <a href="/2014/07/29/any-vs-anyobject/">
+            Any vs. AnyObject
+            <small>29 Jul 2014</small>
           </a>
         </h3>
       </li>

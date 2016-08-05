@@ -28,19 +28,19 @@ class Movie {
 
 There is one interesting thing in the above example – the ```_``` sign:	
 
-- **We can use ```_``` sign when we want to omit providing parameter name in ```init``` method.** 
+**We can use ```_``` sign when we want to omit providing parameter name in ```init``` method.** 
 
-	In this case we can create ```Movie``` object like this...
+In this case we can create ```Movie``` object like this...
 
-	```swift
-	Movie("Forrest Gump")
-	```
+```swift
+Movie("Forrest Gump")
+```
 
-	...instead of
+...instead of
 
-	```swift
-	Movie(title: "Forrest Gump")
-	```
+```swift
+Movie(title: "Forrest Gump")
+```
 
 If we would like to create an array holding ```Movie``` instances and also some other class type instances, we can do it like this:
 
@@ -49,8 +49,6 @@ var anyObjectThings = [AnyObject]()
 ```
 
 As we want to hold only class instances we don't have to use [Any] type alias.
-
--
 
 We than append new ```Movie``` object to the array like this: 
 
