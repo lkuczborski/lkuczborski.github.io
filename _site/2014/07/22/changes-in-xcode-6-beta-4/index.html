@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en-us">
 
   <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
@@ -88,7 +88,7 @@
       <a class="sidebar-nav-item" href="https://github.com/lkuczborski" target="_blank">GitHub</a>
     </nav>
 
-    <p>&copy; 2016. All rights reserved.</p>
+    <p>&copy; 2018. All rights reserved.</p>
   </div>
 </div>
 
@@ -103,19 +103,19 @@
 
 <h2 id="toc">TOC</h2>
 
-<h3 id="access-controlaccess"><a href="#access">Access Control</a></h3>
+<h3 id="access-control"><a href="#access">Access Control</a></h3>
 
-<h3 id="by---strideby"><a href="#by">.by() -&gt; stride()</a></h3>
+<h3 id="by---stride"><a href="#by">.by() -&gt; stride()</a></h3>
 
-<h3 id="unicode-string-improvementsunicode"><a href="#unicode">Unicode String improvements</a></h3>
+<h3 id="unicode-string-improvements"><a href="#unicode">Unicode String improvements</a></h3>
 
-<h3 id="revised-declaration-modifiersmodifiers"><a href="#modifiers">Revised Declaration Modifiers</a></h3>
+<h3 id="revised-declaration-modifiers"><a href="#modifiers">Revised Declaration Modifiers</a></h3>
 
-<h3 id="landmarkslandmarks"><a href="#landmarks">Landmarks</a></h3>
+<h3 id="landmarks"><a href="#landmarks">Landmarks</a></h3>
 
 <hr />
 
-<h3 id="a-idaccessaaccess-control"><a id="access"></a>Access Control</h3>
+<h3 id="access-control-1"><a id="access"></a>Access Control</h3>
 
 <h4 id="access-levels">Access levels</h4>
 <p>Entities can be:</p>
@@ -153,7 +153,7 @@
       <li>contains both <strong>public and internal</strong> declarations for <strong>Applications</strong></li>
     </ul>
 
-    <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// An example class in a framework target.</span>
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// An example class in a framework target.</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="kt">ListItem</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span>
     <span class="kd">public</span> <span class="k">var</span> <span class="nv">isComplete</span><span class="p">:</span> <span class="kt">Bool</span>
@@ -177,8 +177,7 @@
         <span class="k">return</span> <span class="kc">false</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.</p>
@@ -198,7 +197,7 @@ the <code class="highlighter-rouge">@objc</code> attribute to the declaration ex
 
 <hr />
 
-<h3 id="a-idbyaby---stride"><a id="by"></a>.by() -&gt; stride()</h3>
+<h3 id="by---stride-1"><a id="by"></a>.by() -&gt; stride()</h3>
 
 <p>The .by() method for ranges has been replaced with general stride() functions.</p>
 
@@ -217,27 +216,25 @@ the <code class="highlighter-rouge">@objc</code> attribute to the declaration ex
 </ul>
 
 <h4 id="examples">Examples</h4>
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="n">z</span><span class="p">)</span>           <span class="c1">//was: (x..&lt;y).by(z)</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="n">z</span><span class="p">)</span>           <span class="c1">//was: (x..&lt;y).by(z)</span>
 <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="n">z</span><span class="p">)</span>      <span class="c1">//was: (x...y).by(z)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
-<h2 id="a-idunicodeaunicode-string-improvements"><a id="unicode"></a>Unicode String improvements</h2>
+<h2 id="unicode-string-improvements-1"><a id="unicode"></a>Unicode String improvements</h2>
 <p>The <code class="highlighter-rouge">String</code> type now implements a grapheme cluster segmentation algorithm to
 produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.</p>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// returns 15</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// returns 15</span>
 <span class="nf">countElements</span><span class="p">(</span><span class="s">"a</span><span class="se">\u{1F30D}</span><span class="s">cafe</span><span class="se">\u{0301}</span><span class="s">umbrella</span><span class="se">\u{FE0E}</span><span class="s"> </span><span class="se">\u{1F1E9}\u{1F1EA}</span><span class="s">”)
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>A <code class="highlighter-rouge">for-in</code> loop over the string produces each human visible character in sequence.</p>
 
 <hr />
 
-<h2 id="a-idmodifiersarevised-declaration-modifiers"><a id="modifiers"></a>Revised Declaration Modifiers</h2>
+<h2 id="revised-declaration-modifiers-1"><a id="modifiers"></a>Revised Declaration Modifiers</h2>
 <p>The <code class="highlighter-rouge">@final</code>, <code class="highlighter-rouge">@lazy</code>, <code class="highlighter-rouge">@optional</code>, and <code class="highlighter-rouge">@required</code> attributes have been converted to declaration modifiers, specified without an <code class="highlighter-rouge">@</code> sign.</p>
 
 <ul>
@@ -257,7 +254,7 @@ produce Characters. This means that iteration over complex strings that include 
 
 <hr />
 
-<h2 id="a-idlandmarksalandmarks"><a id="landmarks"></a>Landmarks</h2>
+<h2 id="landmarks-1"><a id="landmarks"></a>Landmarks</h2>
 <p>Finally! Xcode now supports <code class="highlighter-rouge">//MARK:</code>, <code class="highlighter-rouge">//TODO:</code> and <code class="highlighter-rouge">//FIXME</code> landmarks to annotate your code and
 lists them in the jump bar.</p>
 

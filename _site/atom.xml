@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Yours Swiftly</title>
- <link href="http://kuczborski.com/atom.xml" rel="self"/>
- <link href="http://kuczborski.com/"/>
- <updated>2016-08-05T15:51:51+02:00</updated>
- <id>http://kuczborski.com</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2018-12-31T10:57:52+01:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>Łukasz Kuczborski</name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Two years of Swift Warsaw 🎉</title>
-   <link href="http://kuczborski.com/2016/08/05/two-years-of-swift-warsaw/"/>
+   <link href="http://localhost:4000/2016/08/05/two-years-of-swift-warsaw/"/>
    <updated>2016-08-05T00:00:00+02:00</updated>
-   <id>http://kuczborski.com/2016/08/05/two-years-of-swift-warsaw</id>
+   <id>http://localhost:4000/2016/08/05/two-years-of-swift-warsaw</id>
    <content type="html">&lt;p&gt;It’s been two years since our first meetup. A lot of things happend in the meantime. We have a new place for our meetups (Thanks &lt;a href=&quot;https://www.syncano.io&quot;&gt;Syncano&lt;/a&gt;!), new sponsors (&lt;a href=&quot;https://www.syncano.io&quot;&gt;Syncano&lt;/a&gt;, &lt;a href=&quot;http://10clouds.com&quot;&gt;10clouds&lt;/a&gt;, &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt;), we changed our logo. But what is most important is that we grew. A lot.&lt;/p&gt;
 
 &lt;center&gt;&lt;img src=&quot;http://photos4.meetupstatic.com/photos/event/8/d/4/9/global_446316169.jpeg&quot; /&gt;&lt;/center&gt;
@@ -29,9 +29,9 @@
  
  <entry>
    <title>Swift Warsaw 1 aftermath</title>
-   <link href="http://kuczborski.com/2014/08/01/swift-warsaw-1/"/>
+   <link href="http://localhost:4000/2014/08/01/swift-warsaw-1/"/>
    <updated>2014-08-01T00:00:00+02:00</updated>
-   <id>http://kuczborski.com/2014/08/01/swift-warsaw-1</id>
+   <id>http://localhost:4000/2014/08/01/swift-warsaw-1</id>
    <content type="html">&lt;p&gt;So we met yesterday at &lt;a href=&quot;http://macoscope.com&quot;&gt;Macoscope&lt;/a&gt; HQ for &lt;strong&gt;Swift Warsaw #1&lt;/strong&gt; event. And it went great! I would like to thank all for coming. It was really great to meet such a big crowd of Swifters and to-be-Swifters :) Hope our community will grow even further, see you at our next meetup (TBA soon)! 💬🍺👍&lt;/p&gt;
 
 &lt;p&gt;In the meantime here are the slides from yesterday’s talks:&lt;/p&gt;
@@ -52,9 +52,9 @@ Also available on &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&q
  
  <entry>
    <title>Any vs. AnyObject</title>
-   <link href="http://kuczborski.com/2014/07/29/any-vs-anyobject/"/>
+   <link href="http://localhost:4000/2014/07/29/any-vs-anyobject/"/>
    <updated>2014-07-29T00:00:00+02:00</updated>
-   <id>http://kuczborski.com/2014/07/29/any-vs-anyobject</id>
+   <id>http://localhost:4000/2014/07/29/any-vs-anyobject</id>
    <content type="html">&lt;p&gt;Swift provides two special type aliases for working with non-specific types:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -66,7 +66,7 @@ Also available on &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&q
 
 &lt;p&gt;Let’s assume we have &lt;code class=&quot;highlighter-rouge&quot;&gt;Movie&lt;/code&gt; class…&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
     &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -75,8 +75,7 @@ Also available on &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&q
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Title: &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)\&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;.&quot;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;There is one interesting thing in the above example – the &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; sign:&lt;/p&gt;
 
@@ -84,44 +83,39 @@ Also available on &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&q
 
 &lt;p&gt;In this case we can create &lt;code class=&quot;highlighter-rouge&quot;&gt;Movie&lt;/code&gt; object like this…&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Forrest Gump&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Forrest Gump&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;…instead of&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Forrest Gump&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Forrest Gump&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;If we would like to create an array holding &lt;code class=&quot;highlighter-rouge&quot;&gt;Movie&lt;/code&gt; instances and also some other class type instances, we can do it like this:&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;anyObjectThings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;anyObjectThings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;As we want to hold only class instances we don’t have to use [Any] type alias.&lt;/p&gt;
 
 &lt;p&gt;We than append new &lt;code class=&quot;highlighter-rouge&quot;&gt;Movie&lt;/code&gt; object to the array like this:&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;anyObjectThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Forrest Gump&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;anyObjectThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Forrest Gump&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
 &lt;span class=&quot;nf&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;anyObjectThings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;simpleDescription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; 
 &lt;span class=&quot;c1&quot;&gt;// returns &quot;Title: &quot;Forrest Gump&quot;.&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;We use [Any] when we want to support more than just class types, for eg.:&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;anyThings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]()&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;anyThings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]()&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.14159&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;anyThings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Godzilla&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Also see my previous blog post on creating Arrays and Dictionaries with various value types &lt;a href=&quot;/2014/07/21/arrays-and-dicts&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Apple warns to use &lt;code class=&quot;highlighter-rouge&quot;&gt;Any&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;AnyObject&lt;/code&gt; only when you explicitly need the behavior and capabilities they provide.&lt;/strong&gt; It is always better to be specific about the types you expect to work with in your code.&lt;/p&gt;
@@ -132,9 +126,9 @@ Also available on &lt;a href=&quot;https://github.com/jklausa/swiftinflux-talk&q
  
  <entry>
    <title>Introducing Swift Warsaw</title>
-   <link href="http://kuczborski.com/2014/07/25/introducing-swift-warsaw/"/>
+   <link href="http://localhost:4000/2014/07/25/introducing-swift-warsaw/"/>
    <updated>2014-07-25T00:00:00+02:00</updated>
-   <id>http://kuczborski.com/2014/07/25/introducing-swift-warsaw</id>
+   <id>http://localhost:4000/2014/07/25/introducing-swift-warsaw</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://narf.pl&quot;&gt;Maciek&lt;/a&gt; has already &lt;a href=&quot;http://macoscope.com/blog/the-swift-community-in-poland-a-developers-diary/#more&quot;&gt;written&lt;/a&gt; a great blog post about what &lt;a href=&quot;http://swiftwarsaw.com&quot;&gt;Swift Warsaw&lt;/a&gt; is, and how it came to be. I just wanted to add my two cents.&lt;/p&gt;
 
 &lt;p&gt;The idea came to my head at &lt;a href=&quot;http://swiftcrunch.com&quot;&gt;#SwiftCrunch&lt;/a&gt; where I met a lot of great devs and wanted the spirit of hackathon to live after the event. I wanted to create a great community. The one that would like to meet regularly and talk all things Swift and more. The one that would benefit from such meetups and level up their and our knowledge about Apple’s “one more thing” for developers this year. I hope that we will accomplish exactly that.&lt;/p&gt;
@@ -155,28 +149,28 @@ Yours Swiftly,&lt;br /&gt;
  
  <entry>
    <title>Changes in Xcode 6 Beta 4</title>
-   <link href="http://kuczborski.com/2014/07/22/changes-in-xcode-6-beta-4/"/>
+   <link href="http://localhost:4000/2014/07/22/changes-in-xcode-6-beta-4/"/>
    <updated>2014-07-22T00:00:00+02:00</updated>
-   <id>http://kuczborski.com/2014/07/22/changes-in-xcode-6-beta-4</id>
+   <id>http://localhost:4000/2014/07/22/changes-in-xcode-6-beta-4</id>
    <content type="html">&lt;p&gt;Xcode 6 Beta 4 brought some important changes related to constantly evolving Swift Language. Below is a compilation of the most important ones.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;toc&quot;&gt;TOC&lt;/h2&gt;
 
-&lt;h3 id=&quot;access-controlaccess&quot;&gt;&lt;a href=&quot;#access&quot;&gt;Access Control&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;access-control&quot;&gt;&lt;a href=&quot;#access&quot;&gt;Access Control&lt;/a&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;by---strideby&quot;&gt;&lt;a href=&quot;#by&quot;&gt;.by() -&amp;gt; stride()&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;by---stride&quot;&gt;&lt;a href=&quot;#by&quot;&gt;.by() -&amp;gt; stride()&lt;/a&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;unicode-string-improvementsunicode&quot;&gt;&lt;a href=&quot;#unicode&quot;&gt;Unicode String improvements&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;unicode-string-improvements&quot;&gt;&lt;a href=&quot;#unicode&quot;&gt;Unicode String improvements&lt;/a&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;revised-declaration-modifiersmodifiers&quot;&gt;&lt;a href=&quot;#modifiers&quot;&gt;Revised Declaration Modifiers&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;revised-declaration-modifiers&quot;&gt;&lt;a href=&quot;#modifiers&quot;&gt;Revised Declaration Modifiers&lt;/a&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;landmarkslandmarks&quot;&gt;&lt;a href=&quot;#landmarks&quot;&gt;Landmarks&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;landmarks&quot;&gt;&lt;a href=&quot;#landmarks&quot;&gt;Landmarks&lt;/a&gt;&lt;/h3&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;a-idaccessaaccess-control&quot;&gt;&lt;a id=&quot;access&quot;&gt;&lt;/a&gt;Access Control&lt;/h3&gt;
+&lt;h3 id=&quot;access-control-1&quot;&gt;&lt;a id=&quot;access&quot;&gt;&lt;/a&gt;Access Control&lt;/h3&gt;
 
 &lt;h4 id=&quot;access-levels&quot;&gt;Access levels&lt;/h4&gt;
 &lt;p&gt;Entities can be:&lt;/p&gt;
@@ -214,7 +208,7 @@ Yours Swiftly,&lt;br /&gt;
       &lt;li&gt;contains both &lt;strong&gt;public and internal&lt;/strong&gt; declarations for &lt;strong&gt;Applications&lt;/strong&gt;&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// An example class in a framework target.&lt;/span&gt;
+    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// An example class in a framework target.&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ListItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;isComplete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
@@ -238,8 +232,7 @@ Yours Swiftly,&lt;br /&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Declarations marked private are not exposed to the Objective-C runtime if not otherwise annotated.&lt;/p&gt;
@@ -259,7 +252,7 @@ the &lt;code class=&quot;highlighter-rouge&quot;&gt;@objc&lt;/code&gt; attribute
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;a-idbyaby---stride&quot;&gt;&lt;a id=&quot;by&quot;&gt;&lt;/a&gt;.by() -&amp;gt; stride()&lt;/h3&gt;
+&lt;h3 id=&quot;by---stride-1&quot;&gt;&lt;a id=&quot;by&quot;&gt;&lt;/a&gt;.by() -&amp;gt; stride()&lt;/h3&gt;
 
 &lt;p&gt;The .by() method for ranges has been replaced with general stride() functions.&lt;/p&gt;
 
@@ -278,27 +271,25 @@ the &lt;code class=&quot;highlighter-rouge&quot;&gt;@objc&lt;/code&gt; attribute
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;examples&quot;&gt;Examples&lt;/h4&gt;
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;//was: (x..&amp;lt;y).by(z)&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;//was: (x..&amp;lt;y).by(z)&lt;/span&gt;
 &lt;span class=&quot;nf&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;through&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;//was: (x...y).by(z)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;a-idunicodeaunicode-string-improvements&quot;&gt;&lt;a id=&quot;unicode&quot;&gt;&lt;/a&gt;Unicode String improvements&lt;/h2&gt;
+&lt;h2 id=&quot;unicode-string-improvements-1&quot;&gt;&lt;a id=&quot;unicode&quot;&gt;&lt;/a&gt;Unicode String improvements&lt;/h2&gt;
 &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; type now implements a grapheme cluster segmentation algorithm to
 produce Characters. This means that iteration over complex strings that include combining marks, variation sequences, and regional indicators work properly.&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// returns 15&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// returns 15&lt;/span&gt;
 &lt;span class=&quot;nf&quot;&gt;countElements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;a&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u{1F30D}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;cafe&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u{0301}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;umbrella&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u{FE0E}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u{1F1E9}\u{1F1EA}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”)
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;for-in&lt;/code&gt; loop over the string produces each human visible character in sequence.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;a-idmodifiersarevised-declaration-modifiers&quot;&gt;&lt;a id=&quot;modifiers&quot;&gt;&lt;/a&gt;Revised Declaration Modifiers&lt;/h2&gt;
+&lt;h2 id=&quot;revised-declaration-modifiers-1&quot;&gt;&lt;a id=&quot;modifiers&quot;&gt;&lt;/a&gt;Revised Declaration Modifiers&lt;/h2&gt;
 &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;@final&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;@lazy&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;@optional&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;@required&lt;/code&gt; attributes have been converted to declaration modifiers, specified without an &lt;code class=&quot;highlighter-rouge&quot;&gt;@&lt;/code&gt; sign.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -318,7 +309,7 @@ produce Characters. This means that iteration over complex strings that include 
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;a-idlandmarksalandmarks&quot;&gt;&lt;a id=&quot;landmarks&quot;&gt;&lt;/a&gt;Landmarks&lt;/h2&gt;
+&lt;h2 id=&quot;landmarks-1&quot;&gt;&lt;a id=&quot;landmarks&quot;&gt;&lt;/a&gt;Landmarks&lt;/h2&gt;
 &lt;p&gt;Finally! Xcode now supports &lt;code class=&quot;highlighter-rouge&quot;&gt;//MARK:&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;//TODO:&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;//FIXME&lt;/code&gt; landmarks to annotate your code and
 lists them in the jump bar.&lt;/p&gt;
 
@@ -330,24 +321,22 @@ lists them in the jump bar.&lt;/p&gt;
  
  <entry>
    <title>Arrays and Dictionaries with various value types in Swift</title>
-   <link href="http://kuczborski.com/2014/07/21/arrays-and-dicts.1/"/>
+   <link href="http://localhost:4000/2014/07/21/arrays-and-dicts.1/"/>
    <updated>2014-07-21T00:00:00+02:00</updated>
-   <id>http://kuczborski.com/2014/07/21/arrays-and-dicts.1</id>
+   <id>http://localhost:4000/2014/07/21/arrays-and-dicts.1</id>
    <content type="html">&lt;p&gt;Xcode 6 Beta 3 brought some changes to sugar syntax for declaring Arrays and Dictionaries.&lt;/p&gt;
 
 &lt;p&gt;Here is how you can now create an Array with different value types:&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Create an Array with different value types */&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Create an Array with different value types */&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;aString&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And here is the same for Dictionary:&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Create a Dictionary with different value types */&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Create a Dictionary with different value types */&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;key1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;aString&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;key2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;key3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
  

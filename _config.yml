@@ -28,5 +28,5 @@ twitter:          https://twitter.com/lkuczborski
 allegro:          https://twitter.com/allegro_group
 swift-warsaw:     https://twitter.com/swiftwarsaw
 
-# Gems
-gems: [jekyll-paginate]
+# Plugins
+plugins: [jekyll-paginate]

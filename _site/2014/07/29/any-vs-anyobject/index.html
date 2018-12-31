@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en-us">
 
   <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
@@ -88,7 +88,7 @@
       <a class="sidebar-nav-item" href="https://github.com/lkuczborski" target="_blank">GitHub</a>
     </nav>
 
-    <p>&copy; 2016. All rights reserved.</p>
+    <p>&copy; 2018. All rights reserved.</p>
   </div>
 </div>
 
@@ -108,7 +108,7 @@
 
 <p>Let’s assume we have <code class="highlighter-rouge">Movie</code> class…</p>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">Movie</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">Movie</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
     <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
@@ -117,8 +117,7 @@
         <span class="k">return</span> <span class="s">"Title: </span><span class="se">\"\(</span><span class="n">title</span><span class="se">)\"</span><span class="s">."</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>There is one interesting thing in the above example – the <code class="highlighter-rouge">_</code> sign:</p>
 
@@ -126,44 +125,39 @@
 
 <p>In this case we can create <code class="highlighter-rouge">Movie</code> object like this…</p>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">Movie</span><span class="p">(</span><span class="s">"Forrest Gump"</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Movie</span><span class="p">(</span><span class="s">"Forrest Gump"</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>…instead of</p>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">Movie</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Forrest Gump"</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Movie</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Forrest Gump"</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>If we would like to create an array holding <code class="highlighter-rouge">Movie</code> instances and also some other class type instances, we can do it like this:</p>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">anyObjectThings</span> <span class="o">=</span> <span class="p">[</span><span class="kt">AnyObject</span><span class="p">]()</span>
-</code></pre>
-</div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">anyObjectThings</span> <span class="o">=</span> <span class="p">[</span><span class="kt">AnyObject</span><span class="p">]()</span>
+</code></pre></div></div>
 
 <p>As we want to hold only class instances we don’t have to use [Any] type alias.</p>
 
 <p>We than append new <code class="highlighter-rouge">Movie</code> object to the array like this:</p>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">anyObjectThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Movie</span><span class="p">(</span><span class="s">"Forrest Gump"</span><span class="p">))</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">anyObjectThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Movie</span><span class="p">(</span><span class="s">"Forrest Gump"</span><span class="p">))</span>
 
 <span class="nf">println</span><span class="p">((</span><span class="n">anyObjectThings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">as</span> <span class="kt">Movie</span><span class="p">)</span><span class="o">.</span><span class="nf">simpleDescription</span><span class="p">())</span> 
 <span class="c1">// returns "Title: "Forrest Gump"."</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>We use [Any] when we want to support more than just class types, for eg.:</p>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">anyThings</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]()</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">anyThings</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]()</span>
 
 <span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">)</span>
 <span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>
 <span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">((</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">))</span>
 <span class="n">anyThings</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Movie</span><span class="p">(</span><span class="s">"Godzilla"</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>Also see my previous blog post on creating Arrays and Dictionaries with various value types <a href="/2014/07/21/arrays-and-dicts">here</a>.</p>
 
 <p><strong>Apple warns to use <code class="highlighter-rouge">Any</code> and <code class="highlighter-rouge">AnyObject</code> only when you explicitly need the behavior and capabilities they provide.</strong> It is always better to be specific about the types you expect to work with in your code.</p>
