@@ -13,7 +13,7 @@ title:            'Yours Swiftly'
 tagline:          'by Łukasz Kuczborski'
 description:      'Blogged by <a href="https://twitter.com/lkuczborski" target="_blank">@lkuczborski</a>.'
 url:              http://kuczborski.com
-baseurl:          /
+#baseurl:          /
 excerpt_separator: <!--more-->
 
 author:
